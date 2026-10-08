@@ -19,12 +19,12 @@ export const Hero = () => {
           </motion.div>
           <h1
             lang="hi"
-            className="display mt-6 text-[40px] sm:text-5xl lg:text-[68px] xl:text-[76px] leading-[1.15]"
+            className="display mt-6 text-[40px] sm:text-5xl lg:text-[68px] xl:text-[76px] leading-[1.4]"
             style={{ fontFamily: '"Mukta", "Manrope", sans-serif', letterSpacing: "normal" }}
             data-testid="hero-headline"
           >
             {LINES.map((l, i) => (
-              <span key={l} className="block overflow-hidden pb-[0.1em] -mb-[0.1em]">
+              <span key={l} className="block overflow-hidden pb-[0.4em] -mb-[0.4em] pt-[0.08em] -mt-[0.08em]">
                 <motion.span
                   className={`block ${i === 2 ? "text-green" : ""}`}
                   initial={reduce ? false : { y: "110%" }}
