@@ -104,7 +104,7 @@ export const Footer = () => (
   <footer className="bg-paper border-t border-divider pb-24 md:pb-0" data-testid="footer">
     <Container className="py-14 grid md:grid-cols-3 gap-10">
       <div>
-        <Logo />
+        <Logo size="h-20" />
         <p className="mt-4 text-[15px] text-ink/70 max-w-[36ch]">Residential & commercial construction. Lucknow / UP. Kyu ki ghar banata hai ek baar.</p>
         <address className="mt-5 not-italic text-[14px] text-ink/70 space-y-1">
           <p>HQ: 2nd Floor, Vibhuti Khand, Gomti Nagar, Lucknow 226010</p>
@@ -134,7 +134,7 @@ export const Footer = () => (
     </Container>
     <div className="border-t border-divider">
       <Container className="py-5 flex flex-col md:flex-row gap-3 md:items-center justify-between font-mono text-[12px] text-ink/60">
-        <p>© 2026 Ghar Banwao®. A Clicknify group company. · Lucknow, Varanasi, Kanpur</p>
+        <p>© 2026 GharBanwao.com®. Lucknow, Varanasi, Kanpur · Designed by <a href="https://clicknify.com" target="_blank" rel="noreferrer" className="text-ink font-semibold hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-clicknify-link">Clicknify</a></p>
         <div className="flex gap-4">
           {["Instagram", "Facebook", "YouTube", "LinkedIn"].map((s) => (
             <a key={s} href="#" onClick={(e) => e.preventDefault()} className="hover:text-ink">{s}</a>

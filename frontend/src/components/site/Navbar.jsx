@@ -32,10 +32,10 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 h-[72px] bg-paper/90 backdrop-blur-xl border-b border-divider no-print" data-testid="navbar">
-        <div className="container-gb h-full flex items-center gap-6">
+      <header className="sticky top-0 z-40 h-[84px] md:h-[92px] bg-paper/90 backdrop-blur-xl border-b border-divider no-print" data-testid="navbar">
+        <div className="mx-auto w-full max-w-[1360px] px-5 md:px-6 h-full flex items-center gap-4 xl:gap-6">
           <Logo />
-          <nav className="hidden lg:flex items-center gap-1 ml-6" aria-label="Primary">
+          <nav className="hidden lg:flex items-center gap-0.5 ml-2" aria-label="Primary">
             {NAV.map((n) => (
               <button
                 key={n.id}
@@ -49,7 +49,7 @@ export const Navbar = () => {
           </nav>
           <button
             onClick={() => setSearchOpen(true)}
-            className="hidden md:flex ml-auto items-center gap-3 h-11 w-[260px] rounded-full border border-divider bg-paper px-4 text-left text-ink/50 text-[14px] hover:border-ink/40 transition-colors"
+            className="hidden md:flex ml-auto items-center gap-3 h-11 w-[200px] xl:w-[240px] rounded-full border border-divider bg-paper px-4 text-left text-ink/50 text-[14px] hover:border-ink/40 transition-colors"
             data-testid="nav-search-trigger"
           >
             <Search className="h-4 w-4" />
@@ -75,7 +75,7 @@ export const Navbar = () => {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
-              className="lg:hidden absolute inset-x-0 top-[72px] bg-paper border-b border-divider p-6 flex flex-col gap-1"
+              className="lg:hidden absolute inset-x-0 top-full bg-paper border-b border-divider p-6 flex flex-col gap-1"
               data-testid="nav-mobile-menu"
             >
               {NAV.map((n) => (
