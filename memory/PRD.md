@@ -22,6 +22,9 @@ Follow-up: use real logo (full size, no cropping), Hindi hero tagline "भूम
 - Real logo in header/footer/favicon, Hindi tagline (Mukta font), Clicknify credit
 - Testing: iteration_1 — backend 14/14, frontend 100%
 
+## Implemented (2026-10-08, cont.)
+- Branded PDF download for the full calculator's phase-wise estimate (`src/lib/pdf.js`, jsPDF + jspdf-autotable, no backend call): header with rasterized logo + contact, title/city/sqft/date, 3 summary cards (total/per-sqft/duration), Phase-wise Breakdown table, Resource Allocation table (with chosen quality tiers), disclaimer + page numbers on every page. Button `calc-download-pdf-button` sits in Step 03 Actions next to Print/Share. "Rs." used instead of ₹ in the PDF (default PDF fonts don't render the ₹ glyph). Verified via browser-automation download + file content analysis (2 pages, no rendering issues, 87KB).
+
 ## Backlog
 - P0: none
 - P1: Mapbox GL real map (replace schematic), WhatsApp/email delivery of leads + PDF estimate, real photography replacing IMG placeholders, live Google reviews embed

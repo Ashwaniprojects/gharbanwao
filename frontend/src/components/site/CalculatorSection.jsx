@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, Printer, Share2 } from "lucide-react";
+import { ArrowRight, Download, Printer, Share2 } from "lucide-react";
+import { toast } from "sonner";
 import { Container, MonoLabel, Reveal, SectionHeader } from "./shared";
 import { UnitToggle } from "./HeroCalculator";
 import { CalcDonut, CalcTimeline } from "./CalcCharts";
@@ -10,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useCalc } from "@/lib/calcContext";
 import { formatINR } from "@/lib/calc";
 import { scrollToId } from "@/lib/scroll";
+import { downloadEstimatePDF } from "@/lib/pdf";
 
 const Field = ({ label, children }) => (
   <label className="grid gap-1.5">
@@ -21,6 +23,19 @@ const Field = ({ label, children }) => (
 export const CalculatorSection = ({ standalone = false }) => {
   const { config, inputs, setInput, estimate, step, setStep, isError } = useCalc();
   const [shareOpen, setShareOpen] = useState(false);
+  const [pdfLoading, setPdfLoading] = useState(false);
+
+  const handleDownloadPdf = async () => {
+    if (!estimate) return;
+    setPdfLoading(true);
+    try {
+      await downloadEstimatePDF({ estimate, inputs, config });
+    } catch {
+      toast.error("Could not generate the PDF. Please try again.");
+    } finally {
+      setPdfLoading(false);
+    }
+  };
 
   return (
     <section id="calculator" className={`section-gb ${standalone ? "" : "border-t border-divider"}`} data-testid="calculator-section">
@@ -93,10 +108,14 @@ export const CalculatorSection = ({ standalone = false }) => {
 
                 <div className="mt-8 flex flex-col md:flex-row md:items-center gap-3 md:justify-end no-print" data-testid="calculator-step3">
                   <MonoLabel className="md:mr-auto">Step 03 · Actions</MonoLabel>
+                  <button onClick={handleDownloadPdf} disabled={pdfLoading} className="pill-ghost h-12 px-6 disabled:opacity-60" data-testid="calc-download-pdf-button">
+                    <Download className="h-4 w-4" /> {pdfLoading ? "Preparing PDF…" : "Download PDF"}
+                  </button>
                   <button onClick={() => window.print()} className="pill-ghost h-12 px-6" data-testid="calc-print-button"><Printer className="h-4 w-4" /> Print Final Estimate</button>
                   <button onClick={() => setShareOpen(true)} className="pill-ghost h-12 px-6" data-testid="calc-share-button"><Share2 className="h-4 w-4" /> Share Final Estimate</button>
                   <button onClick={() => scrollToId("contact")} className="pill-green h-12 px-6" data-testid="calc-book-visit-button">Book Free Site Visit <ArrowRight className="h-4 w-4" strokeWidth={2.5} /></button>
                 </div>
+                <p className="mt-2 text-right text-[12px] text-ink/50 no-print" data-testid="calc-download-pdf-hint">Download the PDF to send it to family or save for your records — no sign-up needed.</p>
               </div>
             </motion.div>
           )}
