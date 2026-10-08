@@ -21,8 +21,8 @@ const SIZES = [
 ];
 const inSize = (s, k) => k === "all" || (k === "lt1000" && s < 1000) || (k === "1000-2000" && s >= 1000 && s < 2000) || (k === "2000-3500" && s >= 2000 && s < 3500) || (k === "gt3500" && s >= 3500);
 const STAGES = ["Design", "Foundation", "Structure", "Brickwork", "Finishing", "Handover"];
-const STATUS_TABS = [["ongoing", "Ongoing"], ["handed_over", "Completed"]];
-const UP_BOUNDS = [[25.2, 80.25], [26.95, 83.05]]; // covers Lucknow + Kanpur + Varanasi
+const STATUS_TABS = [["all", "All"], ["ongoing", "Ongoing"], ["handed_over", "Completed"]];
+const LUCKNOW_BOUNDS = [[26.73, 80.84], [26.95, 81.07]]; // default zoomed-in view — most projects live here
 
 const Chip = ({ active, children, ...rest }) => (
   <button type="button" className={`h-9 px-3.5 rounded-full text-[13px] font-semibold border transition-colors ${active ? "bg-green border-green" : "border-divider hover:border-ink/40"}`} {...rest}>
@@ -53,18 +53,17 @@ const clusterIcon = (cluster) => {
   });
 };
 
-const FitToPoints = ({ points }) => {
+const FitToPoints = ({ locality, points }) => {
   const map = useMap();
   useEffect(() => {
-    if (points.length === 0) {
-      map.fitBounds(UP_BOUNDS, { padding: [30, 30] });
-    } else if (points.length === 1) {
-      map.setView(points[0], 14);
+    if (locality !== "all" && points.length > 0) {
+      if (points.length === 1) map.setView(points[0], 15);
+      else map.fitBounds(L.latLngBounds(points), { padding: [50, 50], maxZoom: 16 });
     } else {
-      map.fitBounds(L.latLngBounds(points), { padding: [50, 50], maxZoom: 14 });
+      map.fitBounds(LUCKNOW_BOUNDS, { padding: [20, 20] });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [JSON.stringify(points)]);
+  }, [locality, JSON.stringify(points)]);
   return null;
 };
 
@@ -100,7 +99,7 @@ const ProjectCard = ({ p }) => (
 
 export const ProjectsMap = () => {
   const { data: projects = [], isLoading } = useQuery({ queryKey: ["projects-all"], queryFn: () => fetchProjects({ limit: 500 }) });
-  const [status, setStatus] = useState("ongoing");
+  const [status, setStatus] = useState("all");
   const [locality, setLocality] = useState("all");
   const [size, setSize] = useState("all");
   const [pkg, setPkg] = useState("all");
@@ -108,10 +107,11 @@ export const ProjectsMap = () => {
 
   const localities = useMemo(() => [...new Set(projects.map((p) => p.locality))].sort(), [projects]);
   const filtered = useMemo(
-    () => projects.filter((p) => p.status === status && (locality === "all" || p.locality === locality) && inSize(p.size_sqft, size) && (pkg === "all" || p.package === pkg)),
+    () => projects.filter((p) => (status === "all" || p.status === status) && (locality === "all" || p.locality === locality) && inSize(p.size_sqft, size) && (pkg === "all" || p.package === pkg)),
     [projects, status, locality, size, pkg]
   );
   const counts = useMemo(() => ({
+    all: projects.length,
     ongoing: projects.filter((p) => p.status === "ongoing").length,
     handed_over: projects.filter((p) => p.status === "handed_over").length,
   }), [projects]);
@@ -148,7 +148,7 @@ export const ProjectsMap = () => {
             <SelectTrigger className="h-9 w-[160px] rounded-full border-divider text-[13px] font-semibold" data-testid="map-filter-size"><SelectValue /></SelectTrigger>
             <SelectContent>{SIZES.map(([v, l]) => <SelectItem key={v} value={v}>{l}</SelectItem>)}</SelectContent>
           </Select>
-          <div className="flex gap-1.5">
+          <div className="flex gap-1.5 flex-wrap">
             {["all", "Essential", "Signature", "Premium"].map((v) => (
               <Chip key={v} active={pkg === v} onClick={() => setPkg(v)} data-testid={`map-filter-package-${v.toLowerCase()}`}>{v === "all" ? "All packages" : v}</Chip>
             ))}
@@ -159,16 +159,20 @@ export const ProjectsMap = () => {
         <div className="mt-6 grid lg:grid-cols-3 gap-6">
           <Reveal className="lg:col-span-2 relative rounded-2xl border border-divider bg-paper overflow-hidden min-h-[460px] lg:min-h-[720px]" data-testid="projects-map">
             {isLoading && <div className="absolute inset-0 z-[1000] grid place-items-center bg-paper font-mono text-[12px] text-ink/50">Loading 297 pins…</div>}
-            <MapContainer bounds={UP_BOUNDS} scrollWheelZoom className="h-full w-full" style={{ height: "100%", width: "100%" }} data-testid="projects-map-canvas">
+            <MapContainer bounds={LUCKNOW_BOUNDS} scrollWheelZoom className="h-full w-full" style={{ height: "100%", width: "100%" }} data-testid="projects-map-canvas">
               <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              <FitToPoints points={points} />
+              <FitToPoints locality={locality} points={points} />
               <MarkerClusterGroup chunkedLoading iconCreateFunction={clusterIcon} maxClusterRadius={55} spiderfyOnMaxZoom>
                 {filtered.map((p) => (
                   <Marker
                     key={p.gb_id}
                     position={[p.lat, p.lng]}
                     icon={pinIcon(p.status, active?.gb_id === p.gb_id)}
-                    eventHandlers={{ click: () => setSelected(p.gb_id) }}
+                    eventHandlers={{
+                      mouseover: (e) => { setSelected(p.gb_id); e.target.openPopup(); },
+                      mouseout: (e) => e.target.closePopup(),
+                      click: (e) => { setSelected(p.gb_id); e.target.openPopup(); },
+                    }}
                     data-testid={`map-pin-${p.gb_id}`}
                   >
                     <Popup data-testid="map-tooltip">
