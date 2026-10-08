@@ -1,0 +1,42 @@
+{
+  "updated": "2026-10-08",
+  "states": ["Uttar Pradesh"],
+  "cities": ["Lucknow", "Varanasi", "Kanpur", "Allahabad", "Gorakhpur", "Agra", "Noida"],
+  "city_multipliers": {
+    "Lucknow": 1.0,
+    "Varanasi": 0.95,
+    "Kanpur": 0.92,
+    "Allahabad": 0.93,
+    "Gorakhpur": 0.9,
+    "Agra": 0.96,
+    "Noida": 1.18
+  },
+  "resources": {
+    "cement": { "label": "Cement", "unit": "bags", "per_sqft": 0.4, "quality": { "basic": 340, "medium": 380, "premium": 430 } },
+    "steel": { "label": "Steel (TMT)", "unit": "kg", "per_sqft": 3.5, "quality": { "basic": 56, "medium": 62, "premium": 72 } },
+    "bricks": { "label": "Bricks", "unit": "nos", "per_sqft": 8, "quality": { "basic": 7, "medium": 8, "premium": 9.5 } },
+    "aggregate": { "label": "Aggregate", "unit": "cft", "per_sqft": 1.2, "quality": { "basic": 45, "medium": 52, "premium": 60 } },
+    "sand": { "label": "Sand", "unit": "cft", "per_sqft": 1.5, "quality": { "basic": 40, "medium": 48, "premium": 55 } },
+    "flooring": { "label": "Flooring", "unit": "sqft", "per_sqft": 1.0, "quality": { "basic": 55, "medium": 85, "premium": 140 } },
+    "windows": { "label": "Windows", "unit": "sqft", "per_sqft": 0.12, "quality": { "basic": 450, "medium": 650, "premium": 950 } },
+    "doors": { "label": "Doors", "unit": "sqft", "per_sqft": 0.1, "quality": { "basic": 600, "medium": 900, "premium": 1400 } },
+    "electrical": { "label": "Electrical fittings", "unit": "points", "per_sqft": 0.03, "quality": { "basic": 2800, "medium": 3800, "premium": 5200 } },
+    "painting": { "label": "Painting", "unit": "sqft", "per_sqft": 2.8, "quality": { "basic": 14, "medium": 22, "premium": 32 } },
+    "sanitary": { "label": "Sanitary fittings", "unit": "sets", "per_sqft": 0.01, "quality": { "basic": 9000, "medium": 14500, "premium": 24000 } },
+    "kitchen": { "label": "Kitchen work", "unit": "sqft", "per_sqft": 1.0, "quality": { "basic": 90, "medium": 130, "premium": 210 } },
+    "labor": { "label": "Contractor labor", "unit": "sqft", "per_sqft": 1.0, "quality": { "basic": 360, "medium": 380, "premium": 410 } }
+  },
+  "phases": {
+    "design_approval": { "label": "Design & Approval", "days": 46, "percent_of_cost": 3.5 },
+    "excavation": { "label": "Excavation", "days": 14, "percent_of_cost": 1.8 },
+    "footing": { "label": "Footing & Foundation", "days": 24, "percent_of_cost": 9.5 },
+    "rcc": { "label": "RCC Work", "days": 38, "percent_of_cost": 18 },
+    "roof_slab": { "label": "Roof Slab", "days": 18, "percent_of_cost": 8.5 },
+    "brickwork": { "label": "Brickwork & Plastering", "days": 32, "percent_of_cost": 14 },
+    "flooring": { "label": "Flooring & Tiling", "days": 22, "percent_of_cost": 9.2 },
+    "electrical": { "label": "Electrical", "days": 14, "percent_of_cost": 6 },
+    "plumbing": { "label": "Plumbing", "days": 12, "percent_of_cost": 5.5 },
+    "doors_windows": { "label": "Doors & Windows", "days": 13, "percent_of_cost": 8 },
+    "finishing": { "label": "Finishing", "days": 14, "percent_of_cost": 16 }
+  }
+}
