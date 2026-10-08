@@ -1,13 +1,38 @@
 export const PHONES = ["09648249999", "09648259999"];
 export const WHATSAPP_URL = "https://wa.me/919648249999";
 
+// Primary header nav (lean — Calculator and Contact live elsewhere: Calculator is inside Services, Contact moved to footer)
 export const NAV = [
+  { label: "Projects", id: "projects" },
+  { label: "Services", id: "services" },
+  { label: "Packages", id: "packages" },
+  { label: "About", id: "about" },
+];
+
+// Footer "Explore" column — the full sitemap, including items removed from the header
+export const FOOTER_NAV = [
   { label: "Projects", id: "projects" },
   { label: "Services", id: "services" },
   { label: "Calculator", id: "calculator" },
   { label: "Packages", id: "packages" },
   { label: "About", id: "about" },
+  { label: "Reviews", id: "reviews" },
   { label: "Contact", id: "contact" },
+];
+
+// Services dropdown under the header nav. Architecture hands off to our sister company's
+// dedicated architecture/design studio.
+export const SERVICES_MENU = [
+  { label: "New Home Construction", id: "services" },
+  { label: "Architecture & Floor Plans", href: "https://nakshaabanwao.com/", external: true },
+  { label: "Interior Design & Execution", id: "services" },
+  { label: "Renovation & Extension", id: "services" },
+];
+
+export const REGISTER_TYPES = [
+  { key: "vendor", label: "Vendor Registration", tagline: "Supply materials — cement, steel, tiles, fittings — directly to our live sites." },
+  { key: "channel_partner", label: "Channel Partner", tagline: "Refer landowners and homeowners, earn commission on every signed project." },
+  { key: "hiring", label: "Careers / Hiring", tagline: "Join our site, design, or support teams across Lucknow, Kanpur and Varanasi." },
 ];
 
 export const ANNOUNCEMENTS = [

@@ -92,7 +92,7 @@ export const VideoTestimonials = () => {
 };
 
 export const GoogleReviews = () => (
-  <section className="section-gb" data-testid="google-reviews-section">
+  <section id="reviews" className="section-gb" data-testid="google-reviews-section">
     <Container>
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <SectionHeader label="LIVE · NEWEST FIRST" title="Google reviews, unfiltered" supporting="Pulled from Google My Business. We cannot edit these, and we would not want to." />

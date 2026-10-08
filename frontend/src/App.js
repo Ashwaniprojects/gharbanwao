@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import Home from "@/pages/Home";
 import CalculatorPage from "@/pages/CalculatorPage";
+import RegisterPage from "@/pages/RegisterPage";
 import { CalcProvider } from "@/lib/calcContext";
 import { useLenis } from "@/hooks/useLenis";
 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/calculator" element={<CalculatorPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>

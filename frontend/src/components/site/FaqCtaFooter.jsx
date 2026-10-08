@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Phone, Star } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Container, Reveal, SectionHeader } from "./shared";
 import { Logo } from "./Logo";
-import { FAQS, NAV, PHONES, WHATSAPP_URL } from "@/data/content";
+import { FAQS, FOOTER_NAV, PHONES, WHATSAPP_URL } from "@/data/content";
 import { createLead } from "@/lib/api";
 import { scrollToId } from "@/lib/scroll";
+
+const footerGo = (id) => {
+  if (window.location.pathname !== "/") {
+    window.location.href = `/#${id}`;
+    return;
+  }
+  scrollToId(id);
+};
 
 export const FAQ = () => (
   <section id="faq" className="section-gb" data-testid="faq-section">
@@ -115,9 +124,10 @@ export const Footer = () => (
       <div>
         <p className="mono-label text-ink/50 mb-4">Explore</p>
         <ul className="space-y-2 text-[15px] font-semibold">
-          {NAV.map((n) => (
-            <li key={n.id}><button onClick={() => scrollToId(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
+          {FOOTER_NAV.map((n) => (
+            <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
           ))}
+          <li><Link to="/register" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-register">Register with us</Link></li>
           <li><a href="/blog" onClick={(e) => e.preventDefault()} className="hover:underline decoration-green decoration-2 underline-offset-4">Blog</a></li>
         </ul>
       </div>

@@ -25,12 +25,12 @@ api_router = APIRouter(prefix="/api")
 CONFIG_PATH = ROOT_DIR / 'calculator_config.json'
 
 LOCALITIES = [
-    ("Gomti Nagar", "Lucknow", 62, 44), ("Indira Nagar", "Lucknow", 58, 34), ("Jankipuram", "Lucknow", 40, 18),
-    ("Aliganj", "Lucknow", 44, 28), ("Hazratganj", "Lucknow", 50, 46), ("Alambagh", "Lucknow", 42, 60),
-    ("Vikas Nagar", "Lucknow", 48, 22), ("Mahanagar", "Lucknow", 52, 32), ("Sushant Golf City", "Lucknow", 70, 66),
-    ("Chinhat", "Lucknow", 72, 36), ("Rajajipuram", "Lucknow", 32, 48), ("Aashiana", "Lucknow", 46, 68),
-    ("Telibagh", "Lucknow", 54, 74), ("Kanpur Road", "Lucknow", 36, 70), ("Vrindavan Yojana", "Lucknow", 58, 80),
-    ("Sigra", "Varanasi", 88, 78), ("Lanka", "Varanasi", 92, 84), ("Kakadeo", "Kanpur", 16, 82), ("Swaroop Nagar", "Kanpur", 12, 76),
+    ("Gomti Nagar", "Lucknow", 26.8565, 81.0048), ("Indira Nagar", "Lucknow", 26.8783, 80.9859), ("Jankipuram", "Lucknow", 26.9123, 80.9315),
+    ("Aliganj", "Lucknow", 26.8890, 80.9312), ("Hazratganj", "Lucknow", 26.8482, 80.9403), ("Alambagh", "Lucknow", 26.8206, 80.8894),
+    ("Vikas Nagar", "Lucknow", 26.9037, 80.9219), ("Mahanagar", "Lucknow", 26.8763, 80.9476), ("Sushant Golf City", "Lucknow", 26.7995, 81.0243),
+    ("Chinhat", "Lucknow", 26.8781, 81.0398), ("Rajajipuram", "Lucknow", 26.8192, 80.8783), ("Aashiana", "Lucknow", 26.8126, 80.9087),
+    ("Telibagh", "Lucknow", 26.7779, 80.9158), ("Kanpur Road", "Lucknow", 26.7963, 80.8700), ("Vrindavan Yojana", "Lucknow", 26.7523, 80.9476),
+    ("Sigra", "Varanasi", 25.3049, 82.9870), ("Lanka", "Varanasi", 25.2667, 83.0096), ("Kakadeo", "Kanpur", 26.4756, 80.3426), ("Swaroop Nagar", "Kanpur", 26.4851, 80.3238),
 ]
 PACKAGES = ["Essential", "Signature", "Premium"]
 FAMILIES = ["Verma", "Srivastava", "Singh", "Mishra", "Tiwari", "Gupta", "Yadav", "Khan", "Pandey", "Agarwal", "Shukla", "Dubey", "Rastogi", "Chaturvedi", "Saxena", "Dixit", "Bajpai", "Awasthi"]
@@ -51,7 +51,7 @@ def build_projects():
     rng = random.Random(7)
     projects = []
     for i in range(1, 298):
-        loc, city, cx, cy = rng.choice(LOCALITIES)
+        loc, city, clat, clng = rng.choice(LOCALITIES)
         width = rng.choice([20, 25, 30, 30, 35, 40, 50])
         depth = rng.choice([40, 45, 50, 50, 60, 70, 80])
         plot = width * depth
@@ -72,8 +72,8 @@ def build_projects():
             "stage_name": STAGES[rng.randint(0, 4)] if status == "ongoing" else "Handed over",
             "owner": f"{rng.choice(FAMILIES)} family",
             "quote": rng.choice(QUOTES),
-            "x": round(cx + rng.uniform(-5, 5), 2),
-            "y": round(cy + rng.uniform(-5, 5), 2),
+            "lat": round(clat + rng.uniform(-0.012, 0.012), 6),
+            "lng": round(clng + rng.uniform(-0.012, 0.012), 6),
         })
     return projects
 
@@ -93,8 +93,8 @@ class Project(BaseModel):
     stage_name: str
     owner: str
     quote: str
-    x: float
-    y: float
+    lat: float
+    lng: float
 
 
 class LeadCreate(BaseModel):
@@ -112,6 +112,25 @@ class LeadCreate(BaseModel):
 
 
 class Lead(LeadCreate):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+
+class RegistrationCreate(BaseModel):
+    type: str  # vendor | channel_partner | hiring
+    name: str
+    phone: str
+    email: Optional[str] = None
+    city: Optional[str] = None
+    company_name: Optional[str] = None
+    category: Optional[str] = None
+    experience_years: Optional[str] = None
+    role: Optional[str] = None
+    message: Optional[str] = None
+
+
+class Registration(RegistrationCreate):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
@@ -185,6 +204,19 @@ async def list_leads():
     return await db.leads.find({}, {"_id": 0}).sort("created_at", -1).to_list(1000)
 
 
+@api_router.post("/registrations", response_model=Registration)
+async def create_registration(payload: RegistrationCreate):
+    registration = Registration(**payload.model_dump())
+    await db.registrations.insert_one(registration.model_dump())
+    return registration
+
+
+@api_router.get("/registrations", response_model=List[Registration])
+async def list_registrations(type: Optional[str] = None):
+    query = {"type": type} if type else {}
+    return await db.registrations.find(query, {"_id": 0}).sort("created_at", -1).to_list(1000)
+
+
 app.include_router(api_router)
 
 app.add_middleware(
@@ -201,7 +233,9 @@ logger = logging.getLogger(__name__)
 
 @app.on_event("startup")
 async def seed_projects():
-    if await db.projects.count_documents({}) == 0:
+    sample = await db.projects.find_one({})
+    if sample is None or "lat" not in sample:
+        await db.projects.delete_many({})
         await db.projects.insert_many(build_projects())
         logger.info("Seeded 297 projects")
 

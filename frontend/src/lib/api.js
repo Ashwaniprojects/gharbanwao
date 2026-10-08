@@ -9,3 +9,4 @@ export const fetchCalculatorConfig = () => api.get("/config/calculator").then((r
 export const fetchProjects = (params = {}) => api.get("/projects", { params }).then((r) => r.data);
 export const fetchProjectStats = () => api.get("/projects/stats").then((r) => r.data);
 export const createLead = (payload) => api.post("/leads", payload).then((r) => r.data);
+export const createRegistration = (payload) => api.post("/registrations", payload).then((r) => r.data);
