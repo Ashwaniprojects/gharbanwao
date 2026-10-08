@@ -3,6 +3,7 @@ export const WHATSAPP_URL = "https://wa.me/919648249999";
 
 // Primary header nav (lean — Calculator and Contact live elsewhere: Calculator is inside Services, Contact moved to footer)
 export const NAV = [
+  { label: "Home", id: "home" },
   { label: "Projects", id: "projects" },
   { label: "Services", id: "services" },
   { label: "Packages", id: "packages" },

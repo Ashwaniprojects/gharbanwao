@@ -34,6 +34,14 @@ export const Navbar = () => {
   const go = (id) => {
     setMenuOpen(false);
     setServicesOpen(false);
+    if (id === "home") {
+      if (window.location.pathname !== "/") {
+        window.location.href = "/";
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
     if (window.location.pathname !== "/") {
       window.location.href = `/#${id}`;
       return;
