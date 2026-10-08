@@ -3,6 +3,7 @@
 ## Original problem statement
 "build my home page for hero section use option 2 the calculator." + uploaded `GharBanwao_Redesign_Outline_v1.md` (19-section homepage spec, locked palette/typography).
 Follow-up: use real logo (full size, no cropping), Hindi hero tagline "भूमिपूजन से गृहप्रवेश तक, सफ़र आपका. साथ हमारा.", footer "Designed by Clicknify" (link https://clicknify.com).
+Follow-up (2026-10-08): swapped hero headline/subtitle — big H1 is now the Hindi line "भूमिपूजन से गृहप्रवेश तक, सफ़र आपका. साथ हमारा." (Mukta font, last line green); subtitle is now "क्योंकि घर बनता है एक बार।" (Hindi translation of "Your home. Built once. Built right. / Kyu ki ghar banta hai ek baar", "एक बार।" in green). Browser tab `<title>` updated to match.
 
 ## User choices
 - Hero Option 2: compact live cost calculator in hero right column + full 3-step calculator in Section 07

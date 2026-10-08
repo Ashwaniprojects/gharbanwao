@@ -4,7 +4,7 @@ import { MonoLabel } from "./shared";
 import { HeroCalculator } from "./HeroCalculator";
 import { scrollToId } from "@/lib/scroll";
 
-const LINES = ["Your home.", "Built once.", "Built right."];
+const LINES = ["भूमिपूजन से गृहप्रवेश तक,", "सफ़र आपका.", "साथ हमारा."];
 
 export const Hero = () => {
   const reduce = useReducedMotion();
@@ -17,9 +17,14 @@ export const Hero = () => {
           <motion.div initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
             <MonoLabel data-testid="hero-label">GB · 2026 · LUCKNOW</MonoLabel>
           </motion.div>
-          <h1 className="display mt-6 text-[44px] sm:text-6xl lg:text-[80px] xl:text-[88px]" data-testid="hero-headline">
+          <h1
+            lang="hi"
+            className="display mt-6 text-[40px] sm:text-5xl lg:text-[68px] xl:text-[76px] leading-[1.15]"
+            style={{ fontFamily: '"Mukta", "Manrope", sans-serif', letterSpacing: "normal" }}
+            data-testid="hero-headline"
+          >
             {LINES.map((l, i) => (
-              <span key={l} className="block overflow-hidden pb-[0.08em] -mb-[0.08em]">
+              <span key={l} className="block overflow-hidden pb-[0.1em] -mb-[0.1em]">
                 <motion.span
                   className={`block ${i === 2 ? "text-green" : ""}`}
                   initial={reduce ? false : { y: "110%" }}
@@ -33,14 +38,14 @@ export const Hero = () => {
           </h1>
           <motion.p
             lang="hi"
-            className="mt-6 text-xl md:text-2xl lg:text-[28px] font-bold leading-snug text-ink"
+            className="mt-6 text-xl md:text-2xl lg:text-[28px] font-extrabold leading-snug text-ink"
             style={{ fontFamily: '"Mukta", "Manrope", sans-serif' }}
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
             data-testid="hero-tagline"
           >
-            भूमिपूजन से गृहप्रवेश तक, <span className="text-green-700">सफ़र आपका. साथ हमारा.</span>
+            क्योंकि घर बनता है <span className="text-green-700">एक बार।</span>
           </motion.p>
           <motion.p
             className="mt-5 text-base md:text-lg text-ink/75 max-w-[52ch]"
