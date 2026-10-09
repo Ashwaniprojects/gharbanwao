@@ -33,17 +33,6 @@ export const Hero = () => {
             ))}
           </h1>
           <motion.p
-            lang="hi"
-            className="mt-6 text-xl md:text-2xl lg:text-[28px] font-extrabold leading-snug text-ink"
-            style={{ fontFamily: '"Mukta", "Manrope", sans-serif' }}
-            initial={reduce ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            data-testid="hero-tagline"
-          >
-            क्योंकि घर बनता है <span className="text-green-700">एक बार।</span>
-          </motion.p>
-          <motion.p
             className="mt-5 text-base md:text-lg text-ink/75 max-w-[52ch]"
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
