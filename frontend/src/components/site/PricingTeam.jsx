@@ -65,7 +65,7 @@ export const Comparison = () => (
 export const Team = () => (
   <section id="about" className="section-gb bg-wash-yellow" data-testid="team-section">
     <Container>
-      <SectionHeader label="DEDICATED ENGINEERS + TEAM" title="The people who will actually be on your site" supporting="Three engineers per project — structural, site, quality — and one project manager who answers your WhatsApp." />
+      <SectionHeader label="DEDICATED ENGINEERS + TEAM" title="The people who will actually be on your site" supporting="As a construction company in Lucknow, we put three engineers per project — structural, site, quality — and one project manager who answers your WhatsApp." />
       <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {TEAM.map((m, i) => (
           <Reveal key={m.name} delay={i * 0.05} className="card-gb p-3 bg-paper flex flex-col" data-testid={`team-card-${i + 1}`}>

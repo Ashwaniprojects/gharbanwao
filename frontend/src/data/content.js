@@ -1,22 +1,24 @@
 export const PHONES = ["09648249999", "09648259999"];
 export const WHATSAPP_URL = "https://wa.aisensy.com/+919198059992";
+export const WHATSAPP_DISPLAY = "09198059992";
 
 // Primary header nav (lean — Calculator and Contact live elsewhere: Calculator is inside Services, Contact moved to footer)
 export const NAV = [
   { label: "Home", id: "home" },
-  { label: "Projects", id: "projects" },
+  { label: "About Us", id: "about" },
   { label: "Services", id: "services" },
+  { label: "Projects", id: "projects" },
   { label: "Packages", id: "packages" },
-  { label: "About", id: "about" },
 ];
 
 // Footer "Explore" column — the full sitemap, including items removed from the header
 export const FOOTER_NAV = [
-  { label: "Projects", id: "projects" },
+  { label: "Home", id: "home" },
+  { label: "About Us", id: "about" },
   { label: "Services", id: "services" },
-  { label: "Calculator", id: "calculator" },
+  { label: "Projects", id: "projects" },
   { label: "Packages", id: "packages" },
-  { label: "About", id: "about" },
+  { label: "Calculator", id: "calculator" },
   { label: "Reviews", id: "reviews" },
   { label: "Contact", id: "contact" },
 ];
@@ -39,9 +41,9 @@ export const REGISTER_TYPES = [
 export const CITIES = ["Lucknow", "Kanpur", "Ayodhya", "Gorakhpur", "Vindhyachal", "Prayagraj", "Sitapur", "Sultanpur"];
 
 export const ANNOUNCEMENTS = [
-  "📞 09648249999 · 09648259999  ·  Serving Lucknow / Kanpur / Ayodhya / Gorakhpur / Vindhyachal / Prayagraj / Sitapur / Sultanpur  ·  WhatsApp: Chat on WhatsApp →",
+  "📞 09648249999 · 09648259999  ·  Serving Lucknow / Kanpur / Ayodhya / Gorakhpur / Vindhyachal / Prayagraj / Sitapur / Sultanpur",
   "Free site visit + written quote in 48 hours  ·  No consultation fee  ·  Call 09648249999",
-  "260+ homes handed over since 2017  ·  37 sites live this week  ·  10-year structural warranty",
+  "260+ homes handed over since 2017  ·  37 sites live this week  ·  25-year structural warranty",
 ];
 
 export const TRUST = [
@@ -57,7 +59,7 @@ export const WHY = [
   { icon: "FlaskConical", title: "Materials quality control", text: "Sample testing before site delivery. Rejected batches get returned." },
   { icon: "Camera", title: "Real-time project tracking", text: "Your WhatsApp gets site photos every Monday and Thursday." },
   { icon: "ShieldCheck", title: "100% money safety", text: "Payments linked to stage completion, not calendar dates." },
-  { icon: "Landmark", title: "Structural warranty", text: "10 years on structure. In writing. Transferable on resale." },
+  { icon: "Landmark", title: "Structural warranty", text: "25 years on structure. In writing. Transferable on resale." },
   { icon: "CalendarRange", title: "Flexible payment schedule", text: "7 or 9 installments, mapped to your cash flow, not ours." },
   { icon: "Headset", title: "Dedicated customer support", text: "One project manager per build. One WhatsApp number. One accountable name." },
   { icon: "Timer", title: "On-time delivery", text: "Average delay across 260+ homes: 11 days. We publish it." },
@@ -151,16 +153,16 @@ export const GOOGLE_REVIEWS = [
 ];
 
 export const PRICING = [
-  { name: "Essential", price: "₹1,299", best: "First-time builders, tight budgets", rows: ["10 years", "7", "Weekly", "Standard", "Essential", "6 months"], cta: "Get Quote", featured: false },
-  { name: "Signature", price: "₹1,699", best: "Most homeowners, best value", rows: ["10 years", "9", "2× weekly", "Mid-premium", "Enhanced", "12 months"], cta: "Get Quote", featured: true },
-  { name: "Premium", price: "₹1,999", best: "Larger plots, custom finishes", rows: ["10 years", "9 + custom", "2× weekly + on-demand", "Premium", "Custom-specified", "24 months"], cta: "Book Design Session", featured: false },
+  { name: "Essential", price: "₹1,299", best: "First-time builders, tight budgets", rows: ["25 years", "7", "Weekly", "Standard", "Essential", "6 months"], cta: "Get Quote", featured: false },
+  { name: "Signature", price: "₹1,699", best: "Most homeowners, best value", rows: ["25 years", "9", "2× weekly", "Mid-premium", "Enhanced", "12 months"], cta: "Get Quote", featured: true },
+  { name: "Premium", price: "₹1,999", best: "Larger plots, custom finishes", rows: ["25 years", "9 + custom", "2× weekly + on-demand", "Premium", "Custom-specified", "24 months"], cta: "Book Design Session", featured: false },
 ];
 export const PRICING_ROWS = ["Structure warranty", "Payment stages", "Site visits by engineer", "Material grade", "Finishing level", "Post-handover support"];
 
 export const COMPARISON = [
   ["Payment linked to stages", "7 or 9 stages", "Weekly cash calls"],
   ["Material brand named in quote", "Yes, in writing", "\"As per site\""],
-  ["Structural warranty", "10 years written", "None"],
+  ["Structural warranty", "25 years written", "None"],
   ["Weekly site photos to homeowner", "Mon + Thu", "\"Come visit anytime\""],
   ["Dedicated project manager", "One name, one WhatsApp", "Owner is also 4 other sites"],
   ["Post-handover fixes", "12 months free", "Charged"],
@@ -193,7 +195,7 @@ export const FAQS = [
   ["Who approves which cement, steel, bricks are used?", "You do. Brands and grades are named in the quote before you sign. Any change needs your written OK. Samples are tested before site delivery and rejected batches are returned."],
   ["What is the payment schedule?", "7 installments on Essential, 9 on Signature and Premium. Each one is released only after you sign off the completed stage. No payment is tied to a calendar date."],
   ["What is NOT included in your quote?", "Plot cost, government approval fees, electricity and water connection charges, boundary wall beyond 4 ft, and interiors not listed in the package. Every exclusion is listed on page 2 of the quote."],
-  ["What is the structural warranty? What does it cover?", "10 years, in writing, on the RCC structure: foundation, columns, beams, slabs. Covers structural cracks and settlement. It is transferable if you sell the home. Finishes carry a separate 12-month support."],
+  ["What is the structural warranty? What does it cover?", "25 years, in writing, on the RCC structure: foundation, columns, beams, slabs. Covers structural cracks and settlement. It is transferable if you sell the home. Finishes carry a separate 12-month support."],
   ["Do you handle approvals and permits?", "Yes. LDA or Nagar Nigam plan sanction, and the completion certificate. Government fees are at actuals and shown separately. It depends on the authority — typically 4 to 7 weeks."],
   ["Can I use my own architect?", "Yes. We build from your architect's approved drawings. Our structural engineer reviews them first and we will tell you if anything needs to change for safety."],
   ["What if I want to change something mid-construction?", "Common. We issue a written change order with the cost and timeline impact before doing the work. You approve it on WhatsApp. Nothing changes without that."],

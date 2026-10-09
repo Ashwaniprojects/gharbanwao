@@ -13,6 +13,14 @@ import { createLead } from "@/lib/api";
 import { scrollToId } from "@/lib/scroll";
 
 const footerGo = (id) => {
+  if (id === "home") {
+    if (window.location.pathname !== "/") {
+      window.location.href = "/";
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    return;
+  }
   if (window.location.pathname !== "/") {
     window.location.href = `/#${id}`;
     return;
@@ -115,9 +123,9 @@ export const Footer = () => (
     <Container className="py-14 grid md:grid-cols-3 gap-10">
       <div>
         <Logo size="h-20" />
-        <p className="mt-4 text-[15px] text-ink/70 max-w-[36ch]">Residential & commercial construction. Lucknow / UP.</p>
+        <p className="mt-4 text-[15px] text-ink/70 max-w-[36ch]">Lucknow's residential & commercial construction company, building it right the first time.</p>
         <address className="mt-5 not-italic text-[14px] text-ink/70 space-y-1">
-          <p>HQ: 2nd Floor, Vibhuti Khand, Gomti Nagar, Lucknow 226010</p>
+          <p>16/284, near Munshipulia, next to Ashirwad Bakery, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
           <p><a href={`tel:${PHONES[0]}`} className="hover:text-ink">{PHONES[0]}</a> · <a href={`tel:${PHONES[1]}`} className="hover:text-ink">{PHONES[1]}</a></p>
           <p><a href={WHATSAPP_URL} className="hover:text-ink">WhatsApp</a> · <a href="mailto:hello@gharbanwao.com" className="hover:text-ink">hello@gharbanwao.com</a></p>
         </address>

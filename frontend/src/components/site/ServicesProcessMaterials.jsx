@@ -8,7 +8,7 @@ import { scrollToId } from "@/lib/scroll";
 export const Services = () => (
   <section id="services" className="section-gb border-t border-divider" data-testid="services-section">
     <Container>
-      <SectionHeader label="04 SERVICES" title="Services we deliver" supporting="Four things we do. Nothing we don't." />
+      <SectionHeader label="04 SERVICES" title="Construction services we deliver across Lucknow" supporting="Four things we do. Nothing we don't." />
       <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {SERVICES.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.06} className="card-gb p-4 flex flex-col group" data-testid={`service-card-${i + 1}`}>

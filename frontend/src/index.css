@@ -55,7 +55,7 @@
     @apply mx-auto w-full max-w-[1280px] px-6;
   }
   .section-gb {
-    @apply py-14 md:py-24;
+    @apply py-10 md:py-16;
   }
   .mono-label {
     @apply font-mono text-[12px] md:text-[13px] font-medium uppercase tracking-[0.12em];

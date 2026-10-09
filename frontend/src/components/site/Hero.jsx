@@ -39,7 +39,7 @@ export const Hero = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             data-testid="hero-supporting"
           >
-            We have handed over 260+ homes across UP. Every one of them tracked, documented, and backed by a structural warranty.
+            As a construction company in Lucknow, we have handed over 260+ homes across UP — every one tracked, documented, and backed by a 25-year structural warranty.
           </motion.p>
           <motion.div
             className="mt-10 flex flex-col sm:flex-row gap-3"

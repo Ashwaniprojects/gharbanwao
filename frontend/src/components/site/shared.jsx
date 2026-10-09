@@ -29,9 +29,8 @@ export const Reveal = ({ children, delay = 0, className = "", ...rest }) => {
   );
 };
 
-export const SectionHeader = ({ label, title, supporting, align = "left", testId }) => (
+export const SectionHeader = ({ title, supporting, align = "left", testId }) => (
   <Reveal className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`} data-testid={testId}>
-    {label && <MonoLabel className="block mb-4">{label}</MonoLabel>}
     <h2 className="display text-3xl sm:text-4xl lg:text-5xl">{title}</h2>
     {supporting && <p className="mt-5 text-base md:text-lg text-ink/70 max-w-[68ch]">{supporting}</p>}
   </Reveal>
