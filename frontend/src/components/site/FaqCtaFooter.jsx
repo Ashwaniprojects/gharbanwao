@@ -115,7 +115,7 @@ export const Footer = () => (
     <Container className="py-14 grid md:grid-cols-3 gap-10">
       <div>
         <Logo size="h-20" />
-        <p className="mt-4 text-[15px] text-ink/70 max-w-[36ch]">Residential & commercial construction. Lucknow / UP. Kyu ki ghar banata hai ek baar.</p>
+        <p className="mt-4 text-[15px] text-ink/70 max-w-[36ch]">Residential & commercial construction. Lucknow / UP.</p>
         <address className="mt-5 not-italic text-[14px] text-ink/70 space-y-1">
           <p>HQ: 2nd Floor, Vibhuti Khand, Gomti Nagar, Lucknow 226010</p>
           <p><a href={`tel:${PHONES[0]}`} className="hover:text-ink">{PHONES[0]}</a> · <a href={`tel:${PHONES[1]}`} className="hover:text-ink">{PHONES[1]}</a></p>
@@ -148,19 +148,20 @@ export const Footer = () => (
         <p>© 2026 GharBanwao.com®. Lucknow, Kanpur & 6 more UP cities · Designed by <a href="https://clicknify.com" target="_blank" rel="noreferrer" className="text-ink font-semibold hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-clicknify-link">Clicknify</a></p>
         <div className="flex gap-3">
           {[
-            [FaFacebook, "Facebook", "https://www.facebook.com/gharbanwao/"],
-            [FaInstagram, "Instagram", "https://www.instagram.com/gharbanwao/"],
-            [FaThreads, "Threads", "https://www.threads.com/@gharbanwao"],
-            [FaYoutube, "YouTube", "https://www.youtube.com/@gharbanwao"],
-            [FaPinterest, "Pinterest", "https://in.pinterest.com/gharbanwao/"],
-          ].map(([Icon, s, href]) => (
+            [FaFacebook, "Facebook", "https://www.facebook.com/gharbanwao/", "#1877F2"],
+            [FaInstagram, "Instagram", "https://www.instagram.com/gharbanwao/", "linear-gradient(45deg, #FEDA75, #FA7E1E, #D62976, #962FBF, #4F5BD5)"],
+            [FaThreads, "Threads", "https://www.threads.com/@gharbanwao", "#000000"],
+            [FaYoutube, "YouTube", "https://www.youtube.com/@gharbanwao", "#FF0000"],
+            [FaPinterest, "Pinterest", "https://in.pinterest.com/gharbanwao/", "#E60023"],
+          ].map(([Icon, s, href, bg]) => (
             <a
               key={s}
               href={href}
               target="_blank"
               rel="noreferrer"
               aria-label={s}
-              className="h-9 w-9 grid place-items-center rounded-full border border-divider text-ink/60 hover:text-ink hover:border-ink/40 hover:bg-wash-green transition-colors"
+              style={{ background: bg }}
+              className="h-9 w-9 grid place-items-center rounded-full text-white hover:scale-110 hover:shadow-md transition-transform"
               data-testid={`footer-social-${s.toLowerCase()}`}
             >
               <Icon className="h-4 w-4" />

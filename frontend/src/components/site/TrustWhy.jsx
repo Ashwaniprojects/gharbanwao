@@ -37,7 +37,6 @@ export const WhyChoose = () => (
       <Reveal className="mt-12 border-t border-ink/10 pt-8">
         <p className="mono-label text-ink">Smart homeowners compare first.</p>
         <p className="mt-2 text-xl md:text-2xl font-extrabold" lang="hi" style={{ fontFamily: '"Mukta", "Manrope", sans-serif' }}>क्योंकि घर बनता है <span className="text-green-700">एक बार।</span></p>
-        <p className="mt-1 text-[14px] font-mono text-ink/50 italic">Kyu ki ghar banata hai ek baar.</p>
       </Reveal>
     </Container>
   </section>
