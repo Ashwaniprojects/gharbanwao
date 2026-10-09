@@ -7,8 +7,8 @@ import { TrustBar, WhyChoose } from "@/components/site/TrustWhy";
 import { ProjectsMap } from "@/components/site/ProjectsMap";
 import { Materials, Process, Services } from "@/components/site/ServicesProcessMaterials";
 import { CalculatorSection } from "@/components/site/CalculatorSection";
-import { GoogleReviews, Testimonials, VideoTestimonials } from "@/components/site/SocialProof";
-import { Awards, Comparison, Pricing, Team } from "@/components/site/PricingTeam";
+import { Testimonials, VideoTestimonials } from "@/components/site/SocialProof";
+import { Comparison, Pricing, Team } from "@/components/site/PricingTeam";
 import { FAQ, FinalCTA, Footer, MobileBar } from "@/components/site/FaqCtaFooter";
 
 export default function Home() {
@@ -31,11 +31,9 @@ export default function Home() {
         <Process />
         <Materials />
         <Testimonials />
-        <GoogleReviews />
         <Pricing />
         <Comparison />
         <Team />
-        <Awards />
         <FAQ />
         <FinalCTA />
       </main>

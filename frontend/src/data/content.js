@@ -19,7 +19,7 @@ export const FOOTER_NAV = [
   { label: "Projects", id: "projects" },
   { label: "Packages", id: "packages" },
   { label: "Calculator", id: "calculator" },
-  { label: "Reviews", id: "reviews" },
+  { label: "Reviews", id: "testimonials" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -99,7 +99,7 @@ export const TESTIMONIALS = [
   ["Sunita Yadav", "Alambagh", "Mar 2026", "Handover pe 150 points ka checklist dikhaya. Ek ek cheez tick karke. Aisa koi nahi karta.", "GB-233", "30×50 ft"],
   ["Deepak Mishra", "Vikas Nagar", "Mar 2026", "We cross-checked their calculator with two contractors. Theirs was within 4%.", "GB-176", "25×40 ft"],
   ["Ritu Pandey", "Mahanagar", "Feb 2026", "Engineer har visit pe mila. Papa roz jaate the site. Kabhi akela nahi laga.", "GB-205", "30×50 ft"],
-  ["Sanjay Agarwal", "Sushant Golf City", "Feb 2026", "Premium package. Every tile, every fitting approved by us before purchase. Zero substitution.", "GB-251", "40×70 ft"],
+  ["Sanjay Agarwal", "Sushant Golf City", "Feb 2026", "Platinum package. Every tile, every fitting approved by us before purchase. Zero substitution.", "GB-251", "40×70 ft"],
   ["Nidhi Shukla", "Chinhat", "Jan 2026", "Quote mein jo likha, wahi bana. Ek rupaya extra nahi. Hum khud hairaan the.", "GB-162", "25×50 ft"],
   ["Vikas Dubey", "Rajajipuram", "Jan 2026", "Cube test har slab pe. Reports WhatsApp pe. Humne pehli baar structural report dekhi.", "GB-149", "30×45 ft"],
   ["Anjali Rastogi", "Aashiana", "Dec 2025", "Delivered in 9 months 4 days. They said 9 months. That's it.", "GB-221", "30×50 ft"],
@@ -107,13 +107,13 @@ export const TESTIMONIALS = [
   ["Shalini Saxena", "Kanpur Road", "Nov 2025", "Post-handover 2 small leaks fixed in 48 hours. Free. 7 months after we moved in.", "GB-168", "25×45 ft"],
   ["Rahul Dixit", "Vrindavan Yojana", "Nov 2025", "Project manager ka naam Arvind. 9 mahine ek hi aadmi. Yahi accountability hai.", "GB-211", "30×60 ft"],
   ["Kavita Bajpai", "Gomti Nagar", "Oct 2025", "Monday aur Thursday photos. Hum Dubai mein the. Ghar yahan ban raha tha. Kabhi tension nahi hui.", "GB-184", "35×50 ft"],
-  ["Ashok Awasthi", "Indira Nagar", "Oct 2025", "Signature package. Mid-premium finish at an honest price. Would pick it again.", "GB-157", "30×50 ft"],
+  ["Ashok Awasthi", "Indira Nagar", "Oct 2025", "Gold package. Mid-premium finish at an honest price. Would pick it again.", "GB-157", "30×50 ft"],
   ["Preeti Singh", "Jankipuram", "Sep 2025", "Warranty certificate 10 saal ka, likhit. Resale pe transfer bhi hota hai. Yeh kisi ne nahi diya.", "GB-139", "25×50 ft"],
   ["Imran Siddiqui", "Aliganj", "Sep 2025", "Approval unhone handle kiya. LDA ke 3 chakkar hum nahi, wo lagaye.", "GB-203", "20×40 ft"],
   ["Geeta Tripathi", "Mahanagar", "Aug 2025", "Mid-construction mein kitchen badla. Change order likhit, cost saaf. Koi drama nahi.", "GB-171", "30×50 ft"],
   ["Naveen Kumar", "Alambagh", "Aug 2025", "Tested their brick sample in front of us. Rejected one lot. Sent it back the same day.", "GB-146", "25×45 ft"],
   ["Swati Mishra", "Sushant Golf City", "Jul 2025", "Budget 58 lakh tha. Final 58.6 lakh. Difference humari apni upgrades thi.", "GB-237", "40×60 ft"],
-  ["Rajesh Pathak", "Chinhat", "Jul 2025", "First-time builder. Essential package. Weekly engineer visit was enough. No regrets.", "GB-128", "20×45 ft"],
+  ["Rajesh Pathak", "Chinhat", "Jul 2025", "First-time builder. Silver package. Weekly engineer visit was enough. No regrets.", "GB-128", "20×45 ft"],
   ["Alka Srivastava", "Vikas Nagar", "Jun 2025", "Har stage pe sign karwaya. Agla payment tabhi. Paisa kabhi aage nahi gaya.", "GB-159", "30×50 ft"],
   ["Tarun Gupta", "Hazratganj", "Jun 2025", "Renovation + floor addition. Structural retrofit explained with drawings. Felt safe.", "GB-116", "30×60 ft"],
   ["Rekha Yadav", "Rajajipuram", "May 2025", "Mummy ke liye ground floor accessible banaya. Suggestion unka tha, charge nahi liya.", "GB-134", "25×50 ft"],
@@ -143,19 +143,10 @@ export const VIDEOS = [
   { code: "VID-06", name: "Kavita Bajpai", locality: "Gomti Nagar", project: "GB-184", length: "0:49" },
 ];
 
-export const GOOGLE_REVIEWS = [
-  { name: "Abhishek Rai", date: "2 days ago", rating: 5, text: "Site visit was free, quote came in 2 days, in writing. Started last week." },
-  { name: "Mamta Jaiswal", date: "1 week ago", rating: 5, text: "Weekly photos are real. Not a marketing line. Monday 10am, every week." },
-  { name: "Harsh Vardhan", date: "2 weeks ago", rating: 4, text: "Good team. Slight delay in tile delivery but they informed us before, not after." },
-  { name: "Sadhna Nigam", date: "3 weeks ago", rating: 5, text: "Calculator estimate and final cost were within 3%. First contractor who was honest about numbers." },
-  { name: "Zeeshan Ahmed", date: "1 month ago", rating: 5, text: "Structural warranty certificate given at handover. Transferable. Checked with my lawyer." },
-  { name: "Rohini Kapoor", date: "1 month ago", rating: 5, text: "Project manager Pallavi handled everything. One number, nine months, zero chaos." },
-];
-
 export const PRICING = [
-  { name: "Essential", price: "₹1,299", best: "First-time builders, tight budgets", rows: ["25 years", "7", "Weekly", "Standard", "Essential", "6 months"], cta: "Get Quote", featured: false },
-  { name: "Signature", price: "₹1,699", best: "Most homeowners, best value", rows: ["25 years", "9", "2× weekly", "Mid-premium", "Enhanced", "12 months"], cta: "Get Quote", featured: true },
-  { name: "Premium", price: "₹1,999", best: "Larger plots, custom finishes", rows: ["25 years", "9 + custom", "2× weekly + on-demand", "Premium", "Custom-specified", "24 months"], cta: "Book Design Session", featured: false },
+  { name: "Silver", price: "₹1,299", best: "First-time builders, tight budgets", rows: ["25 years", "7", "Weekly", "Standard", "Essential", "6 months"], cta: "Get Quote", featured: false },
+  { name: "Gold", price: "₹1,699", best: "Most homeowners, best value", rows: ["25 years", "9", "2× weekly", "Mid-premium", "Enhanced", "12 months"], cta: "Get Quote", featured: true },
+  { name: "Platinum", price: "₹1,999", best: "Larger plots, custom finishes", rows: ["25 years", "9 + custom", "2× weekly + on-demand", "Premium", "Custom-specified", "24 months"], cta: "Book Design Session", featured: false },
 ];
 export const PRICING_ROWS = ["Structure warranty", "Payment stages", "Site visits by engineer", "Material grade", "Finishing level", "Post-handover support"];
 
@@ -178,28 +169,19 @@ export const TEAM = [
   { img: "IMG-80", name: "Vivek Rastogi", role: "Customer Success Lead", years: "6 yrs", specialty: "The one WhatsApp number. Replies in under 2 hours." },
 ];
 
-export const AWARDS = [
-  { label: "MSME Registered", value: "UDYAM-UP-50-00XXXXX" },
-  { label: "GST", value: "09AAXXXXXXXXZ5" },
-  { label: "Udyam Registration", value: "Verified 2024" },
-  { label: "ISO 9001:2015", value: "Quality management" },
-  { label: "CREDAI Member", value: "UP chapter" },
-  { label: "Warranty Certificate", value: "Preview PDF" },
-];
-
 export const FAQS = [
-  ["How much does a 1500 sqft 2 BHK cost in Lucknow in 2026?", "Between ₹19.49 lakh (Essential, ₹1,299/sqft) and ₹29.99 lakh (Premium, ₹1,999/sqft) for construction. Most homeowners land near ₹25.5 lakh on Signature (₹1,699/sqft). Plot cost, approvals, and interiors beyond the package are separate. Use the calculator above for your exact size."],
+  ["How much does a 1500 sqft 2 BHK cost in Lucknow in 2026?", "Between ₹19.49 lakh (Silver, ₹1,299/sqft) and ₹29.99 lakh (Platinum, ₹1,999/sqft) for construction. Most homeowners land near ₹25.5 lakh on Gold (₹1,699/sqft). Plot cost, approvals, and interiors beyond the package are separate. Use the calculator above for your exact size."],
   ["How long does construction actually take?", "8 to 11 months for a 1500 to 2500 sqft home. Our average across 260 homes is 9 months 2 weeks. Monsoon, approval queues, and mid-way design changes are the three variables that move this."],
   ["What happens if construction gets delayed?", "The agreement has a written delay clause. Delays caused by us carry a per-day deduction. Delays from approvals, weather, or your changes are logged and shared on WhatsApp the day they happen. Our published average delay is 11 days."],
   ["Can I visit the site anytime?", "Yes. No appointment needed. The site supervisor is there 9am to 6pm, six days a week. Many homeowners' parents visit daily. We also send photos every Monday and Thursday."],
   ["Who approves which cement, steel, bricks are used?", "You do. Brands and grades are named in the quote before you sign. Any change needs your written OK. Samples are tested before site delivery and rejected batches are returned."],
-  ["What is the payment schedule?", "7 installments on Essential, 9 on Signature and Premium. Each one is released only after you sign off the completed stage. No payment is tied to a calendar date."],
+  ["What is the payment schedule?", "7 installments on Silver, 9 on Gold and Platinum. Each one is released only after you sign off the completed stage. No payment is tied to a calendar date."],
   ["What is NOT included in your quote?", "Plot cost, government approval fees, electricity and water connection charges, boundary wall beyond 4 ft, and interiors not listed in the package. Every exclusion is listed on page 2 of the quote."],
   ["What is the structural warranty? What does it cover?", "25 years, in writing, on the RCC structure: foundation, columns, beams, slabs. Covers structural cracks and settlement. It is transferable if you sell the home. Finishes carry a separate 12-month support."],
   ["Do you handle approvals and permits?", "Yes. LDA or Nagar Nigam plan sanction, and the completion certificate. Government fees are at actuals and shown separately. It depends on the authority — typically 4 to 7 weeks."],
   ["Can I use my own architect?", "Yes. We build from your architect's approved drawings. Our structural engineer reviews them first and we will tell you if anything needs to change for safety."],
   ["What if I want to change something mid-construction?", "Common. We issue a written change order with the cost and timeline impact before doing the work. You approve it on WhatsApp. Nothing changes without that."],
-  ["How do I know you won't disappear?", "260 homes on the map above, each with a real address. 9 years, same office in Lucknow. MSME and GST registered. Payments are stage-linked so your money is never ahead of the work."],
+  ["How do I know you won't disappear?", "260 homes on the map above, each with a real address. 9 years, same office in Lucknow. Payments are stage-linked so your money is never ahead of the work."],
 ];
 
 export const SEARCH_POPULAR = ["2 BHK cost Lucknow", "30×50 house plan", "turnkey package", "brick quality", "GB-229"];

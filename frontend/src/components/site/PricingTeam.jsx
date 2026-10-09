@@ -1,6 +1,6 @@
-import { ArrowRight, Check, X, Linkedin, ExternalLink } from "lucide-react";
+import { ArrowRight, Check, X, Linkedin } from "lucide-react";
 import { Container, Placeholder, Reveal, SectionHeader } from "./shared";
-import { AWARDS, COMPARISON, PRICING, PRICING_ROWS, TEAM } from "@/data/content";
+import { COMPARISON, PRICING, PRICING_ROWS, TEAM } from "@/data/content";
 import { scrollToId } from "@/lib/scroll";
 
 export const Pricing = () => (
@@ -80,22 +80,6 @@ export const Team = () => (
           </Reveal>
         ))}
       </div>
-    </Container>
-  </section>
-);
-
-export const Awards = () => (
-  <section className="py-12 border-y border-divider" data-testid="awards-section">
-    <Container>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-        {AWARDS.map((a, i) => (
-          <button key={a.label} type="button" className="card-gb p-4 text-left group" data-testid={`award-badge-${i + 1}`}>
-            <p className="font-bold text-[14px] text-ink/50 group-hover:text-ink transition-colors flex items-center gap-1">{a.label} <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" /></p>
-            <p className="font-mono text-[11px] text-ink/40 mt-1 truncate">{a.value}</p>
-          </button>
-        ))}
-      </div>
-      <p className="mt-5 font-mono text-[12px] text-ink/50">Everything above is verifiable. Click any badge to see the certificate.</p>
     </Container>
   </section>
 );

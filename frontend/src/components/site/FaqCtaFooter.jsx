@@ -51,7 +51,7 @@ export const FAQ = () => (
 );
 
 const TIMELINES = ["Within 1 month", "1–3 months", "3–6 months", "Just exploring"];
-const PKGS = ["Essential", "Signature", "Premium", "Not sure yet"];
+const PKGS = ["Silver", "Gold", "Platinum", "Not sure yet"];
 
 export const FinalCTA = () => {
   const [f, setF] = useState({ name: "", phone: "", whatsapp: "", city: "Lucknow", locality: "", plot_size: "", timeline: "", package_interest: "" });
@@ -144,8 +144,6 @@ export const Footer = () => (
         <p className="mono-label text-ink/50 mb-4">Trust</p>
         <ul className="space-y-2 text-[15px] text-ink/70">
           <li><a href="https://www.google.com/maps" target="_blank" rel="noreferrer" className="hover:text-ink">Google reviews ↗</a></li>
-          <li className="font-mono text-[13px]">MSME: UDYAM-UP-50-00XXXXX</li>
-          <li className="font-mono text-[13px]">GST: 09AAXXXXXXXXZ5</li>
           <li><a href="/warranty.pdf" onClick={(e) => e.preventDefault()} className="hover:text-ink">Warranty PDF</a></li>
           <li><a href="/privacy" onClick={(e) => e.preventDefault()} className="hover:text-ink">Privacy</a> · <a href="/terms" onClick={(e) => e.preventDefault()} className="hover:text-ink">Terms</a></li>
         </ul>

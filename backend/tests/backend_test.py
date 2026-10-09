@@ -56,11 +56,11 @@ class TestProjects:
         for p in r.json():
             assert p["locality"] == "Gomti Nagar"
 
-    def test_filter_package_signature(self, api):
-        r = api.get(f"{BASE_URL}/api/projects?package=Signature", timeout=30)
+    def test_filter_package_gold(self, api):
+        r = api.get(f"{BASE_URL}/api/projects?package=Gold", timeout=30)
         assert r.status_code == 200
         for p in r.json():
-            assert p["package"] == "Signature"
+            assert p["package"] == "Gold"
 
     def test_search_q(self, api):
         r = api.get(f"{BASE_URL}/api/projects?q=GB-229", timeout=30)

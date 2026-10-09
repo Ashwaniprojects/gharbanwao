@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import { ArrowRight, Play, BadgeCheck } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Container, Placeholder, Reveal, SectionHeader, Stars } from "./shared";
-import { GOOGLE_REVIEWS, TESTIMONIALS, VIDEOS } from "@/data/content";
+import { TESTIMONIALS, VIDEOS } from "@/data/content";
 
 const TCard = ({ t }) => (
   <article className="w-[300px] md:w-[380px] shrink-0 mx-2.5 card-gb p-6 flex flex-col bg-paper" data-testid="testimonial-card">
@@ -91,31 +91,3 @@ export const VideoTestimonials = () => {
   );
 };
 
-export const GoogleReviews = () => (
-  <section id="reviews" className="section-gb" data-testid="google-reviews-section">
-    <Container>
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <SectionHeader label="LIVE · NEWEST FIRST" title="Google reviews, unfiltered" supporting="Pulled from Google My Business. We cannot edit these, and we would not want to." />
-        <div className="card-gb px-5 py-4 flex items-center gap-4 shrink-0" data-testid="google-rating-badge">
-          <span className="display text-4xl">4.8</span>
-          <div className="text-[13px] leading-tight"><Stars n={5} /><p className="text-ink/60 mt-1">180+ reviews on Google</p></div>
-        </div>
-      </div>
-      <div className="mt-12 grid md:grid-cols-3 gap-5">
-        {GOOGLE_REVIEWS.map((r, i) => (
-          <Reveal key={r.name} delay={(i % 3) * 0.06} className="card-gb p-6" data-testid={`google-review-${i + 1}`}>
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="font-bold">{r.name}</p>
-                <p className="text-[13px] text-ink/50">{r.date}</p>
-              </div>
-              <span className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.08em] bg-wash-green text-green-700 px-2 py-1 rounded"><BadgeCheck className="h-3.5 w-3.5" /> Google Verified</span>
-            </div>
-            <p className="mt-3 text-[13px]"><Stars n={r.rating} /></p>
-            <p className="mt-3 text-[15px] text-ink/80">{r.text}</p>
-          </Reveal>
-        ))}
-      </div>
-    </Container>
-  </section>
-);

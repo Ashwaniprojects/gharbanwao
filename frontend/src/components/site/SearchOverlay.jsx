@@ -10,7 +10,7 @@ const LEARN = [
   { title: "How payments link to stages", id: "why" },
   { title: "Our 6-stage construction process", id: "process" },
   { title: "Brands we use on site", id: "materials" },
-  { title: "Essential vs Signature vs Premium", id: "packages" },
+  { title: "Silver vs Gold vs Platinum", id: "packages" },
 ];
 const TABS = ["Projects", "Services", "Learn", "FAQs"];
 

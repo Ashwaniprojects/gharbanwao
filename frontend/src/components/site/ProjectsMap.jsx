@@ -149,7 +149,7 @@ export const ProjectsMap = () => {
             <SelectContent>{SIZES.map(([v, l]) => <SelectItem key={v} value={v}>{l}</SelectItem>)}</SelectContent>
           </Select>
           <div className="flex gap-1.5 flex-wrap">
-            {["all", "Essential", "Signature", "Premium"].map((v) => (
+            {["all", "Silver", "Gold", "Platinum"].map((v) => (
               <Chip key={v} active={pkg === v} onClick={() => setPkg(v)} data-testid={`map-filter-package-${v.toLowerCase()}`}>{v === "all" ? "All packages" : v}</Chip>
             ))}
           </div>

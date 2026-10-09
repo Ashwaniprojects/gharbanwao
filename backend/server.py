@@ -32,7 +32,7 @@ LOCALITIES = [
     ("Telibagh", "Lucknow", 26.7779, 80.9158), ("Kanpur Road", "Lucknow", 26.7963, 80.8700), ("Vrindavan Yojana", "Lucknow", 26.7523, 80.9476),
     ("Sigra", "Varanasi", 25.3049, 82.9870), ("Lanka", "Varanasi", 25.2667, 83.0096), ("Kakadeo", "Kanpur", 26.4756, 80.3426), ("Swaroop Nagar", "Kanpur", 26.4851, 80.3238),
 ]
-PACKAGES = ["Essential", "Signature", "Premium"]
+PACKAGES = ["Silver", "Gold", "Platinum"]
 FAMILIES = ["Verma", "Srivastava", "Singh", "Mishra", "Tiwari", "Gupta", "Yadav", "Khan", "Pandey", "Agarwal", "Shukla", "Dubey", "Rastogi", "Chaturvedi", "Saxena", "Dixit", "Bajpai", "Awasthi"]
 QUOTES = [
     "Photos every Monday and Thursday. 8 months, no surprise cost.",
