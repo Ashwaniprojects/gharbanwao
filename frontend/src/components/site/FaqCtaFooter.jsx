@@ -3,6 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle, Phone, Star } from "lucide-react";
+import { FaFacebook, FaInstagram, FaPinterest, FaThreads, FaYoutube } from "react-icons/fa6";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Container, Reveal, SectionHeader } from "./shared";
@@ -145,15 +146,25 @@ export const Footer = () => (
     <div className="border-t border-divider">
       <Container className="py-5 flex flex-col md:flex-row gap-3 md:items-center justify-between font-mono text-[12px] text-ink/60">
         <p>© 2026 GharBanwao.com®. Lucknow, Kanpur & 6 more UP cities · Designed by <a href="https://clicknify.com" target="_blank" rel="noreferrer" className="text-ink font-semibold hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-clicknify-link">Clicknify</a></p>
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           {[
-            ["Facebook", "https://www.facebook.com/gharbanwao/"],
-            ["Instagram", "https://www.instagram.com/gharbanwao/"],
-            ["Threads", "https://www.threads.com/@gharbanwao"],
-            ["YouTube", "https://www.youtube.com/@gharbanwao"],
-            ["Pinterest", "https://in.pinterest.com/gharbanwao/"],
-          ].map(([s, href]) => (
-            <a key={s} href={href} target="_blank" rel="noreferrer" className="hover:text-ink" data-testid={`footer-social-${s.toLowerCase()}`}>{s}</a>
+            [FaFacebook, "Facebook", "https://www.facebook.com/gharbanwao/"],
+            [FaInstagram, "Instagram", "https://www.instagram.com/gharbanwao/"],
+            [FaThreads, "Threads", "https://www.threads.com/@gharbanwao"],
+            [FaYoutube, "YouTube", "https://www.youtube.com/@gharbanwao"],
+            [FaPinterest, "Pinterest", "https://in.pinterest.com/gharbanwao/"],
+          ].map(([Icon, s, href]) => (
+            <a
+              key={s}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={s}
+              className="h-9 w-9 grid place-items-center rounded-full border border-divider text-ink/60 hover:text-ink hover:border-ink/40 hover:bg-wash-green transition-colors"
+              data-testid={`footer-social-${s.toLowerCase()}`}
+            >
+              <Icon className="h-4 w-4" />
+            </a>
           ))}
         </div>
       </Container>
