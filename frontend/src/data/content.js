@@ -74,12 +74,16 @@ export const SERVICES = [
 ];
 
 export const PROCESS = [
-  { n: "01", name: "Design & Approval", img: "IMG-06", points: ["Site survey + soil test", "Vastu-aligned plan, 3 revisions", "LDA / Nagar Nigam approval filed"] },
-  { n: "02", name: "Foundation", img: "IMG-07", points: ["Excavation to design depth", "PCC + footing steel inspection", "Anti-termite treatment"] },
-  { n: "03", name: "Structure", img: "IMG-08", points: ["RCC columns, beams, slabs", "Cube test every pour", "Curing log shared on WhatsApp"] },
-  { n: "04", name: "Brickwork", img: "IMG-09", points: ["Plumb + level checks per wall", "Conduits before plaster", "Lintels and chajjas cast"] },
-  { n: "05", name: "Finishing", img: "IMG-10", points: ["Flooring, tiling, putty", "Electrical + plumbing fit-out", "Two coats paint, final snag list"] },
-  { n: "06", name: "Handover", img: "IMG-11", points: ["150-point checklist walk", "Warranty + drawings handed over", "12-month support begins"] },
+  { n: "01", name: "Search the Right Company", highlight: "Compare profiles, reviews and past projects before you commit to anyone." },
+  { n: "02", name: "Appointment & Meeting", highlight: "Book a free consultation call or an in-person site visit with our team." },
+  { n: "03", name: "NB Project Code Allotment", highlight: "Your design file is registered with Nakshaa Banwao, our architecture arm." },
+  { n: "04", name: "Meet Architect & Engineer Team", highlight: "Discuss layout, Vastu, elevation and structural needs face to face." },
+  { n: "05", name: "Design & Final Discussion", highlight: "Floor plan, 3D elevation and structural drawing finalized together." },
+  { n: "06", name: "Get Quotation & Agreement", highlight: "A transparent, phase-wise quote signed before a single brick moves." },
+  { n: "07", name: "GB Project Code Allotment", highlight: "Your build is registered with Ghar Banwao and assigned a site engineer." },
+  { n: "08", name: "Pooja & Work Start", highlight: "Bhoomi pujan first, then foundation work begins right on schedule." },
+  { n: "09", name: "Step-by-Step Project Update & Engineer Support", highlight: "Weekly WhatsApp photo updates with direct access to your engineer." },
+  { n: "10", name: "Finishing & Delivery", highlight: "150-point checklist, warranty handover, and keys in your hand." },
 ];
 
 export const BRANDS = ["UltraTech", "ACC", "Shree", "Tata TISCON", "JSW Neosteel", "Jindal Panther", "Asian Paints", "Berger", "Jaquar", "Hindware", "Kajaria", "Somany", "Finolex", "Havells", "Legrand"];
@@ -147,9 +151,9 @@ export const GOOGLE_REVIEWS = [
 ];
 
 export const PRICING = [
-  { name: "Essential", price: "₹1,650", best: "First-time builders, tight budgets", rows: ["10 years", "7", "Weekly", "Standard", "Essential", "6 months"], cta: "Get Quote", featured: false },
-  { name: "Signature", price: "₹1,950", best: "Most homeowners, best value", rows: ["10 years", "9", "2× weekly", "Mid-premium", "Enhanced", "12 months"], cta: "Get Quote", featured: true },
-  { name: "Premium", price: "₹2,450", best: "Larger plots, custom finishes", rows: ["10 years", "9 + custom", "2× weekly + on-demand", "Premium", "Custom-specified", "24 months"], cta: "Book Design Session", featured: false },
+  { name: "Essential", price: "₹1,299", best: "First-time builders, tight budgets", rows: ["10 years", "7", "Weekly", "Standard", "Essential", "6 months"], cta: "Get Quote", featured: false },
+  { name: "Signature", price: "₹1,699", best: "Most homeowners, best value", rows: ["10 years", "9", "2× weekly", "Mid-premium", "Enhanced", "12 months"], cta: "Get Quote", featured: true },
+  { name: "Premium", price: "₹1,999", best: "Larger plots, custom finishes", rows: ["10 years", "9 + custom", "2× weekly + on-demand", "Premium", "Custom-specified", "24 months"], cta: "Book Design Session", featured: false },
 ];
 export const PRICING_ROWS = ["Structure warranty", "Payment stages", "Site visits by engineer", "Material grade", "Finishing level", "Post-handover support"];
 
@@ -182,7 +186,7 @@ export const AWARDS = [
 ];
 
 export const FAQS = [
-  ["How much does a 1500 sqft 2 BHK cost in Lucknow in 2026?", "Between ₹24.75 lakh (Essential, ₹1,650/sqft) and ₹36.75 lakh (Premium, ₹2,450/sqft) for construction. Most homeowners land near ₹29 lakh on Signature. Plot cost, approvals, and interiors beyond the package are separate. Use the calculator above for your exact size."],
+  ["How much does a 1500 sqft 2 BHK cost in Lucknow in 2026?", "Between ₹19.49 lakh (Essential, ₹1,299/sqft) and ₹29.99 lakh (Premium, ₹1,999/sqft) for construction. Most homeowners land near ₹25.5 lakh on Signature (₹1,699/sqft). Plot cost, approvals, and interiors beyond the package are separate. Use the calculator above for your exact size."],
   ["How long does construction actually take?", "8 to 11 months for a 1500 to 2500 sqft home. Our average across 260 homes is 9 months 2 weeks. Monsoon, approval queues, and mid-way design changes are the three variables that move this."],
   ["What happens if construction gets delayed?", "The agreement has a written delay clause. Delays caused by us carry a per-day deduction. Delays from approvals, weather, or your changes are logged and shared on WhatsApp the day they happen. Our published average delay is 11 days."],
   ["Can I visit the site anytime?", "Yes. No appointment needed. The site supervisor is there 9am to 6pm, six days a week. Many homeowners' parents visit daily. We also send photos every Monday and Thursday."],

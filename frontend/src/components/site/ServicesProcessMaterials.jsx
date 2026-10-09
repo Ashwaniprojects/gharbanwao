@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container, Placeholder, Reveal, SectionHeader } from "./shared";
 import { BRANDS, PROCESS, SERVICES } from "@/data/content";
@@ -25,27 +27,67 @@ export const Services = () => (
   </section>
 );
 
-export const Process = () => (
-  <section id="process" className="section-gb bg-wash-green" data-testid="process-section">
-    <Container>
-      <SectionHeader label="06 STAGES · DOCUMENTED" title="Step by step process to start your dream home construction." supporting="Every stage has a sign-off. Your next payment is released only after it." />
-      <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-        {PROCESS.map((p, i) => (
-          <Reveal key={p.n} delay={i * 0.06} className="relative card-gb p-5 flex flex-col" data-testid={`process-stage-${p.n}`}>
-            <Placeholder code={p.img} ratio="aspect-square" />
-            <span className="mt-5 font-mono text-4xl font-medium text-green">{p.n}</span>
-            <h3 className="mt-1 text-[20px] font-bold tracking-tight leading-tight">{p.name}</h3>
-            <ul className="mt-3 space-y-1.5 text-[14px] text-ink/70">
-              {p.points.map((pt) => (
-                <li key={pt} className="flex gap-2"><span className="mt-2 h-1 w-1 rounded-full bg-ink shrink-0" />{pt}</li>
-              ))}
-            </ul>
-          </Reveal>
-        ))}
-      </div>
-    </Container>
-  </section>
-);
+export const Process = () => {
+  const trackRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: trackRef, offset: ["start 0.85", "end 0.4"] });
+  const lineProgress = useTransform(scrollYProgress, [0, 1], ["2%", "100%"]);
+
+  return (
+    <section id="process" className="section-gb bg-wash-green" data-testid="process-section">
+      <Container>
+        <SectionHeader
+          label="10 STEPS · START TO FINISH"
+          title="Step-by-Step Process to Start Your Dream Home Journey"
+          supporting="From the day you search our name to the day we hand you the keys — here is exactly what happens, in order."
+        />
+        <div ref={trackRef} className="relative mt-16">
+          <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-[2px] md:-translate-x-1/2 bg-ink/10" />
+          <motion.div
+            className="absolute left-5 md:left-1/2 top-0 w-[2px] md:-translate-x-1/2 bg-green origin-top"
+            style={{ height: lineProgress }}
+          />
+          <div className="space-y-10 md:space-y-6">
+            {PROCESS.map((p, i) => {
+              const isLeft = i % 2 === 0;
+              const isMilestone = p.name.includes("Code Allotment");
+              const node = (
+                <div
+                  className={`absolute left-5 md:left-1/2 top-0 h-10 w-10 -translate-x-1/2 md:-translate-x-1/2 rounded-full grid place-items-center font-mono text-[13px] font-bold z-10 ring-4 ring-wash-green ${isMilestone ? "bg-ink text-yellow" : "bg-green text-ink"}`}
+                  data-testid={`process-node-${p.n}`}
+                >
+                  {p.n}
+                </div>
+              );
+              const content = (
+                <div className={`pl-16 md:pl-0 ${isLeft ? "md:pr-14 md:text-right" : "md:pl-14"}`} data-testid={`process-stage-${p.n}`}>
+                  {isMilestone && <span className="mono-label text-ink/50">Milestone</span>}
+                  <h3 className="text-[19px] md:text-[21px] font-bold tracking-tight leading-tight">{p.name}</h3>
+                  <p className="mt-1.5 text-[14px] md:text-[15px] text-ink/65">{p.highlight}</p>
+                </div>
+              );
+              return (
+                <Reveal key={p.n} delay={Math.min(i * 0.04, 0.3)} className="relative md:grid md:grid-cols-2 md:gap-10 md:items-start">
+                  {node}
+                  {isLeft ? (
+                    <>
+                      {content}
+                      <div className="hidden md:block" />
+                    </>
+                  ) : (
+                    <>
+                      <div className="hidden md:block" />
+                      {content}
+                    </>
+                  )}
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+};
 
 export const Materials = () => (
   <section id="materials" className="section-gb" data-testid="materials-section">
