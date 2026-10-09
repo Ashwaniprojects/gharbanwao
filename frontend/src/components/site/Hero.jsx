@@ -1,6 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
-import { MonoLabel } from "./shared";
 import { HeroCalculator } from "./HeroCalculator";
 import { scrollToId } from "@/lib/scroll";
 
@@ -14,9 +13,6 @@ export const Hero = () => {
       <div className="absolute -left-24 top-1/2 h-[520px] w-[520px] rounded-full bg-yellow/40 blur-3xl -translate-y-1/2 hidden lg:block" aria-hidden="true" />
       <div className="container-gb relative grid lg:grid-cols-5 gap-10 lg:gap-6 py-14 lg:py-24 min-h-[calc(100vh-108px)] items-center">
         <div className="lg:col-span-3 lg:pr-12">
-          <motion.div initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
-            <MonoLabel data-testid="hero-label">GB · 2026 · LUCKNOW</MonoLabel>
-          </motion.div>
           <h1
             lang="hi"
             className="display mt-6 text-[40px] sm:text-5xl lg:text-[68px] xl:text-[76px] leading-[1.4]"

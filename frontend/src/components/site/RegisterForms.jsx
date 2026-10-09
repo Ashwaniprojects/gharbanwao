@@ -3,12 +3,12 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CITIES } from "@/data/content";
 import { createRegistration } from "@/lib/api";
 
 const VENDOR_CATEGORIES = ["Cement & Building Materials", "Steel & TMT", "Tiles & Sanitaryware", "Electrical & Plumbing", "Paints & Finishes", "Other"];
 const EXPERIENCE = ["New / first-time", "1–3 years", "3–5 years", "5+ years"];
 const ROLES = ["Site Engineer", "Site Supervisor", "Architect / Designer", "Interior Designer", "Quality Inspector", "Customer Success", "Other"];
-const CITIES = ["Lucknow", "Varanasi", "Kanpur", "Other"];
 
 const FIELDS = {
   vendor: { extra: "category", extraLabel: "Category", extraOptions: VENDOR_CATEGORIES, companyLabel: "Company / firm name", messageLabel: "What can you supply, and at what volume?" },
@@ -54,7 +54,7 @@ export const RegisterForm = ({ type }) => {
         <input type="email" placeholder="Email (optional)" value={f.email} onChange={set("email")} className="input-gb" data-testid={`register-${type}-email-input`} />
         <Select value={f.city} onValueChange={set("city")}>
           <SelectTrigger className="h-12 rounded-lg border-divider text-[16px]" data-testid={`register-${type}-city-select`}><SelectValue placeholder="City" /></SelectTrigger>
-          <SelectContent>{CITIES.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
+          <SelectContent>{[...CITIES, "Other"].map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
         </Select>
       </div>
       <div className="grid sm:grid-cols-2 gap-4">

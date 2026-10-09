@@ -23,6 +23,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
+        <VideoTestimonials />
         <WhyChoose />
         <ProjectsMap />
         <Services />
@@ -30,7 +31,6 @@ export default function Home() {
         <Process />
         <Materials />
         <Testimonials />
-        <VideoTestimonials />
         <GoogleReviews />
         <Pricing />
         <Comparison />

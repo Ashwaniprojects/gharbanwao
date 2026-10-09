@@ -1,5 +1,5 @@
 export const PHONES = ["09648249999", "09648259999"];
-export const WHATSAPP_URL = "https://wa.me/919648249999";
+export const WHATSAPP_URL = "https://wa.aisensy.com/+919198059992";
 
 // Primary header nav (lean — Calculator and Contact live elsewhere: Calculator is inside Services, Contact moved to footer)
 export const NAV = [
@@ -24,27 +24,29 @@ export const FOOTER_NAV = [
 // Services dropdown under the header nav. Architecture hands off to our sister company's
 // dedicated architecture/design studio.
 export const SERVICES_MENU = [
-  { label: "New Home Construction", id: "services" },
+  { label: "Construction with Materials", id: "services" },
   { label: "Architecture & Floor Plans", href: "https://nakshaabanwao.com/", external: true },
-  { label: "Interior Design & Execution", id: "services" },
-  { label: "Renovation & Extension", id: "services" },
+  { label: "Interior Design", id: "services" },
+  { label: "Renovation & Makeover", id: "services" },
 ];
 
 export const REGISTER_TYPES = [
   { key: "vendor", label: "Vendor Registration", tagline: "Supply materials — cement, steel, tiles, fittings — directly to our live sites." },
   { key: "channel_partner", label: "Channel Partner", tagline: "Refer landowners and homeowners, earn commission on every signed project." },
-  { key: "hiring", label: "Careers / Hiring", tagline: "Join our site, design, or support teams across Lucknow, Kanpur and Varanasi." },
+  { key: "hiring", label: "Careers / Hiring", tagline: "Join our site, design, or support teams across Lucknow, Kanpur, Ayodhya, Gorakhpur, Vindhyachal, Prayagraj, Sitapur and Sultanpur." },
 ];
 
+export const CITIES = ["Lucknow", "Kanpur", "Ayodhya", "Gorakhpur", "Vindhyachal", "Prayagraj", "Sitapur", "Sultanpur"];
+
 export const ANNOUNCEMENTS = [
-  "📞 09648249999 · 09648259999  ·  Serving Lucknow / Varanasi / Kanpur  ·  WhatsApp: Chat on WhatsApp →",
+  "📞 09648249999 · 09648259999  ·  Serving Lucknow / Kanpur / Ayodhya / Gorakhpur / Vindhyachal / Prayagraj / Sitapur / Sultanpur  ·  WhatsApp: Chat on WhatsApp →",
   "Free site visit + written quote in 48 hours  ·  No consultation fee  ·  Call 09648249999",
   "260+ homes handed over since 2017  ·  37 sites live this week  ·  10-year structural warranty",
 ];
 
 export const TRUST = [
-  { number: "260+", label: "Homes handed over", note: "Across UP since 2017" },
   { number: "37+", label: "Ongoing construction", note: "Live on the project map below" },
+  { number: "260+", label: "Homes handed over", note: "Across UP since 2017" },
   { number: "4.8 / 5", label: "Google rating", note: "From 180+ verified reviews" },
   { number: "9+ yrs", label: "On the ground", note: "Lucknow headquartered" },
 ];
@@ -65,10 +67,10 @@ export const WHY = [
 ];
 
 export const SERVICES = [
-  { img: "IMG-02", title: "New Home Construction", text: "Plot to key handover, turnkey.", cta: "See projects", id: "projects" },
-  { img: "IMG-03", title: "Architectural Planning & Design", text: "Vastu-aligned, approval-ready drawings.", cta: "See floor plans", id: "projects" },
-  { img: "IMG-04", title: "Interior Design & Execution", text: "Modular kitchen, wardrobes, false ceiling, finishes.", cta: "See interiors", id: "projects" },
-  { img: "IMG-05", title: "Renovation & Extension", text: "Floor addition, remodeling, structural retrofit.", cta: "See renovations", id: "projects" },
+  { img: "IMG-03", title: "Architecture Services & Planning", text: "Vastu-aligned, approval-ready drawings.", cta: "See floor plans", id: "projects" },
+  { img: "IMG-02", title: "Construction with Materials", text: "Plot to key handover, turnkey, brand-verified materials.", cta: "See projects", id: "projects" },
+  { img: "IMG-04", title: "Interior Design", text: "Modular kitchen, wardrobes, false ceiling, finishes.", cta: "See interiors", id: "projects" },
+  { img: "IMG-05", title: "Renovation & Makeover", text: "Floor addition, remodeling, structural retrofit.", cta: "See renovations", id: "projects" },
 ];
 
 export const PROCESS = [

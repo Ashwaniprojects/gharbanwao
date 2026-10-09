@@ -28,7 +28,7 @@ export const Services = () => (
 export const Process = () => (
   <section id="process" className="section-gb bg-wash-green" data-testid="process-section">
     <Container>
-      <SectionHeader label="06 STAGES · DOCUMENTED" title="Our construction process" supporting="Every stage has a sign-off. Your next payment is released only after it." />
+      <SectionHeader label="06 STAGES · DOCUMENTED" title="Step by step process to start your dream home construction." supporting="Every stage has a sign-off. Your next payment is released only after it." />
       <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
         {PROCESS.map((p, i) => (
           <Reveal key={p.n} delay={i * 0.06} className="relative card-gb p-5 flex flex-col" data-testid={`process-stage-${p.n}`}>
@@ -43,11 +43,6 @@ export const Process = () => (
           </Reveal>
         ))}
       </div>
-      <Reveal className="mt-10 rounded-2xl border border-divider bg-paper px-6 py-5 font-mono text-[12px] md:text-[13px] uppercase tracking-[0.1em] flex flex-col md:flex-row gap-2 md:gap-8" data-testid="process-callout">
-        <span>Average project timeline: <strong>8 to 11 months</strong></span>
-        <span className="hidden md:inline text-ink/30">·</span>
-        <span>Average delay across 260 projects: <strong className="text-green-700">11 days</strong></span>
-      </Reveal>
     </Container>
   </section>
 );

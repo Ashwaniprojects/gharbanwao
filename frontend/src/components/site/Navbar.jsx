@@ -127,8 +127,8 @@ export const Navbar = () => {
           <button onClick={() => go("contact")} className="hidden md:inline-flex pill-green h-11 px-5 text-[15px] whitespace-nowrap" data-testid="nav-cta-consultation">
             Book Free Consultation
           </button>
-          <a href={`tel:${PHONES[0]}`} className="hidden xl:flex items-center gap-2 font-mono text-[13px] font-medium tracking-wide" data-testid="nav-phone">
-            <Phone className="h-4 w-4 text-green" /> {PHONES[0]}
+          <a href={`tel:${PHONES[0]}`} className="hidden xl:flex items-center gap-2 font-mono text-[13px] font-bold tracking-wide bg-yellow px-3 py-2 rounded-full" data-testid="nav-phone">
+            <Phone className="h-4 w-4 text-ink" /> {PHONES[0]}
           </a>
           <button onClick={() => setMenuOpen((p) => !p)} className="lg:hidden h-10 w-10 grid place-items-center rounded-full border border-divider" aria-label="Menu" data-testid="nav-menu-toggle">
             {menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}

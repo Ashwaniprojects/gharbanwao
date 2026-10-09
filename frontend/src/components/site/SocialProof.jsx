@@ -33,7 +33,7 @@ export const Testimonials = () => {
   return (
     <section id="testimonials" className="section-gb border-t border-divider overflow-hidden" data-testid="testimonials-section">
       <Container>
-        <SectionHeader label="30 OF 260+ · UNEDITED" title="Real homeowners. Real projects. Real reviews." supporting="30 homeowners agreed to go on record. We did not pick the easy ones." />
+        <SectionHeader label="30 OF 260+ · UNEDITED" title="Explore genuine experiences shared by our valued customers." supporting="30 homeowners agreed to go on record. We did not pick the easy ones." />
       </Container>
       <div className="mt-14 space-y-5">
         {reduce ? (
@@ -58,7 +58,7 @@ export const VideoTestimonials = () => {
   return (
     <section className="section-gb bg-wash-yellow" data-testid="video-testimonials-section">
       <Container>
-        <SectionHeader label="6 FEATURED · 60–90 SECONDS" title="Hear it from them" supporting="Shot in front of their completed homes. Their words, their language. Captions baked in." />
+        <SectionHeader label="6 FEATURED · 60–90 SECONDS" title="Hear It from Our Happy Homeowners." supporting="Shot in front of their completed homes. Their words, their language. Captions baked in." />
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {VIDEOS.map((v, i) => (
             <Reveal key={v.code} delay={i * 0.05}>

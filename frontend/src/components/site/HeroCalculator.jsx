@@ -79,8 +79,7 @@ export const HeroCalculator = () => {
         className="relative z-10 rounded-2xl border border-divider bg-paper p-6 md:p-8 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.3)]"
         data-testid="hero-calculator"
       >
-        <div className="flex items-center justify-between">
-          <span className="mono-label text-ink/60">GB-CALC-01 · LIVE</span>
+        <div className="flex items-center justify-end">
           <span className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.1em]">
             <span className="h-2 w-2 rounded-full bg-green animate-pulse" /> Oct 2026 rates
           </span>

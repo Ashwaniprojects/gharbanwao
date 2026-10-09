@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Container, Reveal, SectionHeader } from "./shared";
 import { Logo } from "./Logo";
-import { FAQS, FOOTER_NAV, PHONES, WHATSAPP_URL } from "@/data/content";
+import { CITIES, FAQS, FOOTER_NAV, PHONES, WHATSAPP_URL } from "@/data/content";
 import { createLead } from "@/lib/api";
 import { scrollToId } from "@/lib/scroll";
 
@@ -83,7 +83,7 @@ export const FinalCTA = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               <Select value={f.city} onValueChange={set("city")}>
                 <SelectTrigger className="h-12 rounded-lg border-divider text-[16px]" data-testid="form-city-select"><SelectValue placeholder="City" /></SelectTrigger>
-                <SelectContent>{["Lucknow", "Varanasi", "Kanpur", "Allahabad", "Gorakhpur", "Agra", "Noida", "Other"].map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
+                <SelectContent>{[...CITIES, "Other"].map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}</SelectContent>
               </Select>
               <input placeholder="Locality" value={f.locality} onChange={set("locality")} className="input-gb" data-testid="form-locality-input" />
             </div>
@@ -144,10 +144,16 @@ export const Footer = () => (
     </Container>
     <div className="border-t border-divider">
       <Container className="py-5 flex flex-col md:flex-row gap-3 md:items-center justify-between font-mono text-[12px] text-ink/60">
-        <p>© 2026 GharBanwao.com®. Lucknow, Varanasi, Kanpur · Designed by <a href="https://clicknify.com" target="_blank" rel="noreferrer" className="text-ink font-semibold hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-clicknify-link">Clicknify</a></p>
+        <p>© 2026 GharBanwao.com®. Lucknow, Kanpur & 6 more UP cities · Designed by <a href="https://clicknify.com" target="_blank" rel="noreferrer" className="text-ink font-semibold hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-clicknify-link">Clicknify</a></p>
         <div className="flex gap-4">
-          {["Instagram", "Facebook", "YouTube", "LinkedIn"].map((s) => (
-            <a key={s} href="#" onClick={(e) => e.preventDefault()} className="hover:text-ink">{s}</a>
+          {[
+            ["Facebook", "https://www.facebook.com/gharbanwao/"],
+            ["Instagram", "https://www.instagram.com/gharbanwao/"],
+            ["Threads", "https://www.threads.com/@gharbanwao"],
+            ["YouTube", "https://www.youtube.com/@gharbanwao"],
+            ["Pinterest", "https://in.pinterest.com/gharbanwao/"],
+          ].map(([s, href]) => (
+            <a key={s} href={href} target="_blank" rel="noreferrer" className="hover:text-ink" data-testid={`footer-social-${s.toLowerCase()}`}>{s}</a>
           ))}
         </div>
       </Container>
