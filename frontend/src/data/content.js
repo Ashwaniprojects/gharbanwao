@@ -9,6 +9,7 @@ export const NAV = [
   { label: "Services", id: "services" },
   { label: "Projects", id: "projects" },
   { label: "Packages", id: "packages" },
+  { label: "Reviews", id: "reviews" },
 ];
 
 // Footer "Explore" column — the full sitemap, including items removed from the header

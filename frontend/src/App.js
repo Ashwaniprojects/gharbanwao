@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import Home from "@/pages/Home";
 import CalculatorPage from "@/pages/CalculatorPage";
 import RegisterPage from "@/pages/RegisterPage";
+import ReviewsPage from "@/pages/ReviewsPage";
 import { CalcProvider } from "@/lib/calcContext";
 import { useLenis } from "@/hooks/useLenis";
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/calculator" element={<CalculatorPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/reviews" element={<ReviewsPage />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
