@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Container, Reveal, SectionHeader, Stars } from "@/components/site/shared";
 import { VIDEOS } from "@/data/content";
 
-const REVIEWS = VIDEOS.slice(0, 6);
+const REVIEWS = VIDEOS;
 
 export default function ReviewsPage() {
   const [open, setOpen] = useState(null);

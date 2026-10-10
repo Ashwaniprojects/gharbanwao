@@ -12,13 +12,16 @@ import { CITIES, FAQS, FOOTER_NAV, PHONES, WHATSAPP_URL } from "@/data/content";
 import { createLead } from "@/lib/api";
 import { scrollToId } from "@/lib/scroll";
 
+const PAGE_ROUTES = ["about", "reviews", "contact", "blog", "privacy", "terms"];
+
 const footerGo = (id) => {
   if (id === "home") {
-    if (window.location.pathname !== "/") {
-      window.location.href = "/";
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    if (window.location.pathname !== "/") { window.location.href = "/"; }
+    else { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    return;
+  }
+  if (PAGE_ROUTES.includes(id)) {
+    if (window.location.pathname !== `/${id}`) { window.location.href = `/${id}`; }
     return;
   }
   if (window.location.pathname !== "/") {
@@ -137,7 +140,7 @@ export const Footer = () => (
             <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
           ))}
           <li><Link to="/register" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-register">Register with us</Link></li>
-          <li><a href="/blog" onClick={(e) => e.preventDefault()} className="hover:underline decoration-green decoration-2 underline-offset-4">Blog</a></li>
+          <li><Link to="/blog" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-blog">Blog</Link></li>
         </ul>
       </div>
       <div>
@@ -145,7 +148,7 @@ export const Footer = () => (
         <ul className="space-y-2 text-[15px] text-ink/70">
           <li><a href="https://www.google.com/maps" target="_blank" rel="noreferrer" className="hover:text-ink">Google reviews ↗</a></li>
           <li><a href="/warranty.pdf" onClick={(e) => e.preventDefault()} className="hover:text-ink">Warranty PDF</a></li>
-          <li><a href="/privacy" onClick={(e) => e.preventDefault()} className="hover:text-ink">Privacy</a> · <a href="/terms" onClick={(e) => e.preventDefault()} className="hover:text-ink">Terms</a></li>
+          <li><Link to="/privacy" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-privacy">Privacy</a> · <Link to="/terms" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-terms">Terms</a></li>
         </ul>
       </div>
     </Container>

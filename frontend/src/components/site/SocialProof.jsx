@@ -4,6 +4,7 @@ import { ArrowRight, Play } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Container, Reveal, SectionHeader, Stars } from "./shared";
 import { TESTIMONIALS, VIDEOS } from "@/data/content";
+const HOME_VIDEOS = VIDEOS.slice(0, 6);
 
 const TCard = ({ t }) => (
   <article className="w-[300px] md:w-[380px] shrink-0 mx-2.5 card-gb p-6 flex flex-col bg-paper" data-testid="testimonial-card">
@@ -60,7 +61,7 @@ export const VideoTestimonials = () => {
       <Container>
         <SectionHeader label={`${VIDEOS.length} CUSTOMER REVIEWS · WATCH THE HOMES`} title="Hear It from Our Happy Homeowners." supporting="Shot in front of their completed homes. Their words, their language." />
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {VIDEOS.map((v, i) => (
+          {HOME_VIDEOS.map((v, i) => (
             <Reveal key={v.id} delay={i * 0.05}>
               <button onClick={() => setOpen(v)} className="group w-full text-left card-gb p-3 bg-paper" data-testid={`video-card-${i + 1}`}>
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-divider bg-[#E9E9E6]">

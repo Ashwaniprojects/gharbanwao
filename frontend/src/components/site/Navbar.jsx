@@ -34,8 +34,8 @@ export const Navbar = () => {
   const go = (id) => {
     setMenuOpen(false);
     setServicesOpen(false);
-    if (id === "home" || id === "reviews") {
-      window.location.href = id === "reviews" ? "/reviews" : "/";
+    if (id === "home" || id === "reviews" || id === "about") {
+      window.location.href = id === "reviews" ? "/reviews" : id === "about" ? "/about" : "/";
       return;
     }
     if (window.location.pathname !== "/") {
