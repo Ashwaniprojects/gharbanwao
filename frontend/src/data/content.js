@@ -135,12 +135,17 @@ export const TESTIMONIALS = [
 }));
 
 export const VIDEOS = [
-  { code: "VID-01", name: "Rakesh Verma", locality: "Gomti Nagar", project: "GB-229", length: "1:22" },
-  { code: "VID-02", name: "Pooja Srivastava", locality: "Indira Nagar", project: "GB-214", length: "0:58" },
-  { code: "VID-03", name: "Farhan Khan", locality: "Hazratganj", project: "GB-187", length: "1:10" },
-  { code: "VID-04", name: "Sunita Yadav", locality: "Alambagh", project: "GB-233", length: "1:05" },
-  { code: "VID-05", name: "Sanjay Agarwal", locality: "Sushant Golf City", project: "GB-251", length: "1:30" },
-  { code: "VID-06", name: "Kavita Bajpai", locality: "Gomti Nagar", project: "GB-184", length: "0:49" },
+  { id: "hvii9z4y524", title: "1500 sq.ft 3BHK house built within 32 lakhs | Customer review & house tour" },
+  { id: "QZgBU2xQRBY", title: "Construction on-site client review" },
+  { id: "3D8mgyRK0-Q", title: "1000 sq.ft 2BHK house built within 19 lakhs | Customer review & house tour (GB-136)" },
+  { id: "yZ86G_tQnd4", title: "1000 sq.ft house design | 25 by 40 | Customer review" },
+  { id: "oCfGauWPM0k", title: "Lowest budget hostel construction in Lucknow | G+1+Mumty | Client review & full tour" },
+  { id: "U9oT53aFOdc", title: "Modern 2BHK house in Lucknow | 1000 sq.ft full house tour + customer review" },
+  { id: "DmmwppxdVk4", title: "Modern 3BHK house in Lucknow | 1670 sq.ft full house tour + customer review" },
+  { id: "EEZHvwxpZ9c", title: "Modern 2BHK house in Lucknow | 1000 sq.ft full house tour + customer review" },
+  { id: "04fyoYS5-JI", title: "Before you build your 2BHK, watch this Lucknow home review" },
+  { id: "o1iAdV4OFT8", title: "Before you build your home, watch this review | Bakshi Ka Talab client | 2000 sq.ft" },
+  { id: "UBTwPp_8K5c", title: "Customer reveals the truth about their new home | 1500 sq.ft tour" },
 ];
 
 export const PRICING = [

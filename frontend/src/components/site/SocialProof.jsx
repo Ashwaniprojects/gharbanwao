@@ -2,7 +2,7 @@ import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import { ArrowRight, Play } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { Container, Placeholder, Reveal, SectionHeader, Stars } from "./shared";
+import { Container, Reveal, SectionHeader, Stars } from "./shared";
 import { TESTIMONIALS, VIDEOS } from "@/data/content";
 
 const TCard = ({ t }) => (
@@ -58,23 +58,21 @@ export const VideoTestimonials = () => {
   return (
     <section className="section-gb bg-wash-yellow" data-testid="video-testimonials-section">
       <Container>
-        <SectionHeader label="6 FEATURED · 60–90 SECONDS" title="Hear It from Our Happy Homeowners." supporting="Shot in front of their completed homes. Their words, their language. Captions baked in." />
+        <SectionHeader label={`${VIDEOS.length} CUSTOMER REVIEWS · WATCH THE HOMES`} title="Hear It from Our Happy Homeowners." supporting="Shot in front of their completed homes. Their words, their language." />
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {VIDEOS.map((v, i) => (
-            <Reveal key={v.code} delay={i * 0.05}>
+            <Reveal key={v.id} delay={i * 0.05}>
               <button onClick={() => setOpen(v)} className="group w-full text-left card-gb p-3 bg-paper" data-testid={`video-card-${i + 1}`}>
-                <div className="relative">
-                  <Placeholder code={v.code} ratio="aspect-video" label={`${v.name} · ${v.project}`} />
+                <div className="relative aspect-video overflow-hidden rounded-2xl border border-divider bg-[#E9E9E6]">
+                  <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
                   <span className="absolute inset-0 grid place-items-center">
                     <span className="h-16 w-16 rounded-full bg-green grid place-items-center shadow-lg transition-transform group-hover:scale-110">
                       <Play className="h-6 w-6 fill-paper text-paper ml-1" />
                     </span>
                   </span>
-                  <span className="absolute right-6 bottom-6 font-mono text-[11px] bg-ink text-paper px-2 py-1 rounded">{v.length}</span>
                 </div>
                 <div className="p-3 pt-4">
-                  <p className="font-bold text-[17px]">{v.name}</p>
-                  <p className="text-[14px] text-ink/60">{v.locality} · <span className="font-mono">{v.project}</span></p>
+                  <p className="font-bold text-[16px] leading-snug line-clamp-2">{v.title}</p>
                 </div>
               </button>
             </Reveal>
@@ -83,8 +81,12 @@ export const VideoTestimonials = () => {
       </Container>
       <Dialog open={!!open} onOpenChange={(o) => !o && setOpen(null)}>
         <DialogContent className="max-w-3xl rounded-2xl border-divider p-3" data-testid="video-lightbox">
-          <DialogTitle className="sr-only">{open?.name} testimonial</DialogTitle>
-          {open && <Placeholder code={open.code} ratio="aspect-video" label={`${open.name} · ${open.locality} · video pending production`} />}
+          <DialogTitle className="sr-only">{open?.title}</DialogTitle>
+          {open && (
+            <div className="aspect-video w-full overflow-hidden rounded-xl bg-black">
+              <iframe className="h-full w-full" src={`https://www.youtube-nocookie.com/embed/${open.id}?autoplay=1&rel=0`} title={open.title} allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowFullScreen />
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </section>
