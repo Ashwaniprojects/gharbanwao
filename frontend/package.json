@@ -71,7 +71,8 @@
   "scripts": {
     "start": "craco start",
     "build": "node ./node_modules/@craco/craco/dist/bin/craco.js build",
-    "test": "craco test"
+    "test": "craco test",
+    "postinstall": "node scripts/fix-fast-uri.js"
   },
   "browserslist": {
     "production": [
