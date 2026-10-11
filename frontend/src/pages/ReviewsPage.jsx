@@ -98,13 +98,14 @@ export default function ReviewsPage() {
               supporting="Over 200+ verified reviews from homeowners across Lucknow and 8 UP cities."
               align="center"
             />
-            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {TESTIMONIALS.map((r, i) => {
-                const span = i === 0 || i % 5 === 2;
+                const len = r.quote.length;
+                const colSpan = len > 280 ? "lg:col-span-3" : len > 130 ? "sm:col-span-2 lg:col-span-2" : "";
                 return (
                   <Reveal key={r.project_id || i} delay={(i % 6) * 0.04}>
                     <div
-                      className={`card-gb p-5 md:p-6 flex flex-col ${span ? "sm:col-span-2 lg:col-span-2" : ""}`}
+                      className={`card-gb p-5 md:p-6 flex flex-col ${colSpan}`}
                       data-testid={`google-review-${i + 1}`}
                     >
                       <div className="flex items-start justify-between gap-3">
