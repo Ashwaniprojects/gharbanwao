@@ -101,7 +101,7 @@ export default function ReviewsPage() {
             <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {TESTIMONIALS.map((r, i) => {
                 const len = r.quote.length;
-                const colSpan = len > 280 ? "lg:col-span-3" : len > 130 ? "sm:col-span-2 lg:col-span-2" : "";
+                const colSpan = len > 280 ? "sm:col-span-2 lg:col-span-2" : len > 130 ? "sm:col-span-2 lg:col-span-2" : "";
                 return (
                   <Reveal key={r.project_id || i} delay={(i % 6) * 0.04}>
                     <div
@@ -118,7 +118,7 @@ export default function ReviewsPage() {
                       <div className="mt-2.5">
                         <StarRow rating={r.rating} />
                       </div>
-                      <p className="mt-3 text-[14px] text-ink/75 leading-relaxed flex-1">&ldquo;{r.quote}&rdquo;</p>
+                      <p className="mt-3 text-[14px] text-ink/75 leading-relaxed line-clamp-4">&ldquo;{r.quote}&rdquo;</p>
                       {r.project_id !== "GB-Unknown" && (
                         <p className="mt-3 text-[12px] font-mono text-ink/40">Project {r.project_id}</p>
                       )}
