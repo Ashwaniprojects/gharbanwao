@@ -164,7 +164,7 @@ export default function ReviewsPage() {
               </a>
               <a
                 href="tel:09648249999"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-divider bg-paper text-[15px] font-bold hover:border-ink/40 transition-colors"
+                className="pill-green"
                 data-testid="reviews-call-cta"
               >
                 Call 09648249999
