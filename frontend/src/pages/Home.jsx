@@ -8,7 +8,7 @@ import { ProjectsMap } from "@/components/site/ProjectsMap";
 import { Materials, Process, Services } from "@/components/site/ServicesProcessMaterials";
 import { CalculatorSection } from "@/components/site/CalculatorSection";
 import { Testimonials, VideoTestimonials } from "@/components/site/SocialProof";
-import { Comparison, Pricing, Team } from "@/components/site/PricingTeam";
+import { Comparison, Pricing } from "@/components/site/PricingTeam";
 import { FAQ, FinalCTA, Footer, MobileBar } from "@/components/site/FaqCtaFooter";
 
 export default function Home() {
@@ -33,7 +33,6 @@ export default function Home() {
         <Testimonials />
         <Pricing />
         <Comparison />
-        <Team />
         <FAQ />
         <FinalCTA />
       </main>
