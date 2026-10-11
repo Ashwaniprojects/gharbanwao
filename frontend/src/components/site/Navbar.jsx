@@ -110,7 +110,7 @@ export const Navbar = () => {
           </nav>
           <button
             onClick={() => setSearchOpen(true)}
-            className="hidden md:flex ml-auto items-center gap-3 h-11 w-[200px] xl:w-[240px] rounded-full border border-divider bg-paper px-4 text-left text-ink/50 text-[14px] hover:border-ink/40 transition-colors"
+            className="hidden md:flex ml-auto items-center gap-3 h-11 w-[160px] xl:w-[180px] rounded-full border border-divider bg-paper px-4 text-left text-ink/50 text-[14px] hover:border-ink/40 transition-colors"
             data-testid="nav-search-trigger"
           >
             <Search className="h-4 w-4" />
