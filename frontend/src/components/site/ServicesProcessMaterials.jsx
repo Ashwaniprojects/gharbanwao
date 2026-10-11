@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Container, Placeholder, Reveal, SectionHeader } from "./shared";
+import { Container, Image, Placeholder, Reveal, SectionHeader } from "./shared";
 import { BRANDS, PROCESS, SERVICES } from "@/data/content";
 import { scrollToId } from "@/lib/scroll";
 
@@ -12,7 +12,7 @@ export const Services = () => (
       <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {SERVICES.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.06} className="card-gb p-4 flex flex-col group" data-testid={`service-card-${i + 1}`}>
-            <Placeholder code={s.img} ratio="aspect-[4/3]" label={s.title} />
+            <Image src={s.img} alt={s.title} ratio="aspect-[4/3]" />
             <div className="p-3 pt-6 flex-1 flex flex-col">
               <h3 className="text-[20px] font-bold tracking-tight leading-tight">{s.title}</h3>
               <p className="mt-2 text-[15px] text-ink/65 flex-1">{s.text}</p>

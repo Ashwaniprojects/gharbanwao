@@ -70,10 +70,10 @@ export const WHY = [
 ];
 
 export const SERVICES = [
-  { img: "IMG-03", title: "Architecture Services & Planning", text: "Vastu-aligned, approval-ready drawings.", cta: "See floor plans", id: "projects" },
-  { img: "IMG-02", title: "Construction with Materials", text: "Plot to key handover, turnkey, brand-verified materials.", cta: "See projects", id: "projects" },
-  { img: "IMG-04", title: "Interior Design", text: "Modular kitchen, wardrobes, false ceiling, finishes.", cta: "See interiors", id: "projects" },
-  { img: "IMG-05", title: "Renovation & Makeover", text: "Floor addition, remodeling, structural retrofit.", cta: "See renovations", id: "projects" },
+  { img: "/images/featured/architecture.png", title: "Architecture Services & Planning", text: "Vastu-aligned, approval-ready drawings.", cta: "See floor plans", id: "projects" },
+  { img: "/images/featured/construction.png", title: "Construction with Materials", text: "Plot to key handover, turnkey, brand-verified materials.", cta: "See projects", id: "projects" },
+  { img: "/images/featured/interior.png", title: "Interior Design", text: "Modular kitchen, wardrobes, false ceiling, finishes.", cta: "See interiors", id: "projects" },
+  { img: "/images/featured/renovation.png", title: "Renovation & Makeover", text: "Floor addition, remodeling, structural retrofit.", cta: "See renovations", id: "projects" },
 ];
 
 export const PROCESS = [

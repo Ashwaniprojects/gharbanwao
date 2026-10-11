@@ -1,6 +1,12 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+export const Image = ({ src, alt = "", ratio = "aspect-[4/3]", className = "" }) => (
+  <div className={`relative overflow-hidden rounded-2xl border border-divider bg-[#E9E9E6] ${ratio} ${className}`}>
+    <img src={src} alt={alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+  </div>
+);
+
 export const Container = ({ className = "", children, ...rest }) => (
   <div className={`container-gb ${className}`} {...rest}>
     {children}

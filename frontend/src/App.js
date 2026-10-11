@@ -1,5 +1,6 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/sonner";
 import Home from "@/pages/Home";
 import AboutPage from "@/pages/AboutPage";
@@ -17,20 +18,22 @@ function App() {
   useLenis();
   return (
     <CalcProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/calculator" element={<CalculatorPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/reviews" element={<ReviewsPage />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <HelmetProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/calculator" element={<CalculatorPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/reviews" element={<ReviewsPage />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
       <Toaster position="top-center" richColors />
     </CalcProvider>
   );
