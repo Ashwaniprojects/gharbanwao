@@ -98,25 +98,33 @@ export default function ReviewsPage() {
               supporting="Over 200+ verified reviews from homeowners across Lucknow and 8 UP cities."
               align="center"
             />
-            <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {TESTIMONIALS.map((r, i) => (
-                <Reveal key={r.project_id || i} delay={(i % 3) * 0.05}>
-                  <div className="card-gb p-5 md:p-6" data-testid={`google-review-${i + 1}`}>
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <p className="font-bold text-[15px]">{r.name}</p>
-                        <p className="text-[12px] text-ink/50 font-mono mt-0.5">{r.locality} &middot; {r.date}</p>
+            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+              {TESTIMONIALS.map((r, i) => {
+                const span = i === 0 || i % 5 === 2;
+                return (
+                  <Reveal key={r.project_id || i} delay={(i % 6) * 0.04}>
+                    <div
+                      className={`card-gb p-5 md:p-6 flex flex-col ${span ? "sm:col-span-2 lg:col-span-2" : ""}`}
+                      data-testid={`google-review-${i + 1}`}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <p className="font-bold text-[15px]">{r.name}</p>
+                          <p className="text-[12px] text-ink/50 font-mono mt-0.5">{r.locality} &middot; {r.date}</p>
+                        </div>
+                        <span className="shrink-0 bg-green/10 text-green-700 text-[11px] font-mono font-bold px-2 py-0.5 rounded-full">{r.rating}.0</span>
                       </div>
-                      <span className="shrink-0 bg-green/10 text-green-700 text-[11px] font-mono font-bold px-2 py-0.5 rounded-full">{r.rating}.0</span>
+                      <div className="mt-2.5">
+                        <StarRow rating={r.rating} />
+                      </div>
+                      <p className="mt-3 text-[14px] text-ink/75 leading-relaxed flex-1">&ldquo;{r.quote}&rdquo;</p>
+                      {r.project_id !== "GB-Unknown" && (
+                        <p className="mt-3 text-[12px] font-mono text-ink/40">Project {r.project_id}</p>
+                      )}
                     </div>
-                    <div className="mt-2.5">
-                      <StarRow rating={r.rating} />
-                    </div>
-                    <p className="mt-3 text-[14px] text-ink/75 leading-relaxed">&ldquo;{r.quote}&rdquo;</p>
-                    <p className="mt-2.5 text-[12px] font-mono text-ink/40">Project {r.project_id} &middot; {r.project_size}</p>
-                  </div>
-                </Reveal>
-              ))}
+                  </Reveal>
+                );
+              })}
             </div>
             <Reveal className="mt-12 text-center">
               <a
