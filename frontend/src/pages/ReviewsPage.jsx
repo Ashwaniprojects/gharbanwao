@@ -132,7 +132,7 @@ export default function ReviewsPage() {
                 href="https://www.google.com/maps"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 pill-green px-6 text-[14px]"
+                className="inline-flex items-center gap-2 pill-green px-8"
                 data-testid="reviews-google-link"
               >
                 Read all reviews on Google →
