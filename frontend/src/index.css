@@ -66,6 +66,11 @@
   .card-gb {
     @apply rounded-2xl border border-divider bg-paper transition-shadow duration-300 hover:shadow-[0_18px_40px_-24px_rgba(0,0,0,0.25)];
   }
+  .why-card {
+    @apply rounded-[30px] bg-[#e8e8e0];
+    box-shadow: 15px 15px 30px #d6d6ce,
+                -15px -15px 30px #fafaf2;
+  }
   .pill {
     @apply inline-flex items-center justify-center gap-2 rounded-full font-bold transition-[transform,background-color,color,border-color] duration-200 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green focus-visible:ring-offset-2;
   }

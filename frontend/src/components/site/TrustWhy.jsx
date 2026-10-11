@@ -52,8 +52,8 @@ export const WhyChoose = () => (
           const Icon = Icons[w.icon] || Icons.Check;
           return (
             <Reveal key={w.title} delay={(i % 4) * 0.05} className="card-gb p-6 md:p-8 group" data-testid={`why-tile-${i + 1}`}>
-              <div className="h-11 w-11 rounded-xl bg-wash-green grid place-items-center group-hover:bg-green transition-colors">
-                <Icon className="h-6 w-6 text-green-700 group-hover:text-ink transition-colors" strokeWidth={1.75} />
+              <div className="h-11 w-11 rounded-xl bg-[#e8f5e9] grid place-items-center">
+                <Icon className="h-6 w-6 text-green-700" strokeWidth={1.75} />
               </div>
               <h3 className="mt-5 text-[18px] font-bold leading-snug">{w.title}</h3>
               <p className="mt-2 text-[15px] text-ink/65">{w.text}</p>
