@@ -106,7 +106,7 @@ export const TESTIMONIALS = [
   ["Anjali Rastogi", "Aashiana", "Dec 2025", "Delivered in 9 months 4 days. They said 9 months. That's it.", "GB-221", "30×50 ft"],
   ["Mohit Chaturvedi", "Telibagh", "Dec 2025", "Material delivery note har baar brand ke saath. Humne khud UltraTech ke bags gine.", "GB-193", "20×50 ft"],
   ["Shalini Saxena", "Kanpur Road", "Nov 2025", "Post-handover 2 small leaks fixed in 48 hours. Free. 7 months after we moved in.", "GB-168", "25×45 ft"],
-  ["Rahul Dixit", "Vrindavan Yojana", "Nov 2025", "Project manager ka naam Arvind. 9 mahine ek hi aadmi. Yahi accountability hai.", "GB-211", "30×60 ft"],
+  ["Rahul Dixit", "Vrindavan Yojana", "Nov 2025", "Project manager ka naam Viren. 9 mahine ek hi aadmi. Yahi accountability hai.", "GB-211", "30×60 ft"],
   ["Kavita Bajpai", "Gomti Nagar", "Oct 2025", "Monday aur Thursday photos. Hum Dubai mein the. Ghar yahan ban raha tha. Kabhi tension nahi hui.", "GB-184", "35×50 ft"],
   ["Ashok Awasthi", "Indira Nagar", "Oct 2025", "Gold package. Mid-premium finish at an honest price. Would pick it again.", "GB-157", "30×50 ft"],
   ["Preeti Singh", "Jankipuram", "Sep 2025", "Warranty certificate 10 saal ka, likhit. Resale pe transfer bhi hota hai. Yeh kisi ne nahi diya.", "GB-139", "25×50 ft"],
@@ -167,7 +167,7 @@ export const COMPARISON = [
 ];
 
 export const TEAM = [
-  { img: "IMG-75", name: "Arvind Srivastava", role: "Head of Projects", years: "14 yrs", specialty: "Has personally handed over 190 of the 260 homes." },
+  { img: "IMG-75", name: "Viren Nishad", role: "Director", years: "14 yrs", specialty: "Has personally handed over 190 of the 260 homes." },
   { img: "IMG-76", name: "Er. Neha Tripathi", role: "Lead Structural Engineer", years: "11 yrs", specialty: "RCC design, soil-bearing analysis, retrofit." },
   { img: "IMG-77", name: "Pallavi Mehrotra", role: "Head of Quality", years: "9 yrs", specialty: "Owns the 150-point checklist. Rejects batches." },
   { img: "IMG-78", name: "Ramesh Kushwaha", role: "Site Supervisor", years: "17 yrs", specialty: "Brickwork and plaster. Plumb line in pocket." },

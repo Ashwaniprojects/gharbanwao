@@ -133,15 +133,22 @@ export const Footer = () => (
           <p><a href={WHATSAPP_URL} className="hover:text-ink">WhatsApp</a> · <a href="mailto:hello@gharbanwao.com" className="hover:text-ink">hello@gharbanwao.com</a></p>
         </address>
       </div>
-      <div>
+      <div className="md:col-span-2">
         <p className="mono-label text-ink/50 mb-4">Explore</p>
-        <ul className="space-y-2 text-[15px] font-semibold">
-          {FOOTER_NAV.map((n) => (
-            <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
-          ))}
-          <li><Link to="/register" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-register">Register with us</Link></li>
-          <li><Link to="/blog" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-blog">Blog</Link></li>
-        </ul>
+        <div className="grid grid-cols-2 gap-x-8">
+          <ul className="space-y-2 text-[15px] font-semibold">
+            {FOOTER_NAV.slice(0, 4).map((n) => (
+              <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
+            ))}
+            <li><Link to="/register" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-register">Register with us</Link></li>
+          </ul>
+          <ul className="space-y-2 text-[15px] font-semibold">
+            {FOOTER_NAV.slice(4).map((n) => (
+              <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
+            ))}
+            <li><Link to="/blog" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-blog">Blog</Link></li>
+          </ul>
+        </div>
       </div>
       <div>
         <p className="mono-label text-ink/50 mb-4">Trust</p>
@@ -154,7 +161,7 @@ export const Footer = () => (
     </Container>
     <div className="border-t border-divider">
       <Container className="py-5 flex flex-col md:flex-row gap-3 md:items-center justify-between font-mono text-[12px] text-ink/60">
-        <p>© 2026 GharBanwao.com®. Lucknow, Kanpur & 6 more UP cities · Designed by <a href="https://clicknify.com" target="_blank" rel="noreferrer" className="text-ink font-semibold hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-clicknify-link">Clicknify</a></p>
+        <p>© 2026 GharBanwao.com®. Lucknow, Kanpur & 6 more UP cities</p>
         <div className="flex gap-3">
           {[
             [FaFacebook, "Facebook", "https://www.facebook.com/gharbanwao/", "#1877F2"],

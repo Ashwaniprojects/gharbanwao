@@ -71,14 +71,14 @@ export default function AboutPage() {
           </Container>
         </section>
 
-        {/* Founder Note */}
-        <section className="section-gb bg-wash-yellow" data-testid="about-founder">
+        {/* Director Note */}
+        <section className="section-gb bg-wash-yellow" data-testid="about-director">
           <Container className="max-w-4xl">
             <Reveal>
               <SectionHeader
-                label="FOUNDER'S NOTE"
+                label="DIRECTOR'S NOTE"
                 title="Why I started Ghar Banwao."
-                supporting="Arvind Srivastava, Founder & Head of Projects"
+                supporting="Viren Nishad, Director, Ghar Banwao"
               />
             </Reveal>
             <Reveal className="mt-8">
@@ -89,8 +89,8 @@ export default function AboutPage() {
                 <p className="text-[16px] leading-relaxed text-ink/80 italic mt-4">
                   "Today, 260+ homes later, the fix is simple: name the brand before you buy it, photograph the work before you pay for it, and give the family a single name that actually answers the phone. That is not revolutionary. That is basic. But in our industry, basic is disruptive."
                 </p>
-                <p className="mt-6 font-bold text-[15px]">Arvind Srivastava</p>
-                <p className="text-[13px] text-ink/60">Founder & Head of Projects, Ghar Banwao</p>
+                <p className="mt-6 font-bold text-[15px]">Viren Nishad</p>
+                <p className="text-[13px] text-ink/60">Director, Ghar Banwao</p>
               </div>
             </Reveal>
           </Container>
@@ -103,7 +103,7 @@ export default function AboutPage() {
               <SectionHeader
                 label="CMD'S NOTE"
                 title="Building for the long term."
-                supporting="Chief Managing Director, Ghar Banwao"
+                supporting="Sujata Nishad, Chief Managing Director, Ghar Banwao"
               />
             </Reveal>
             <Reveal className="mt-8">
@@ -114,8 +114,8 @@ export default function AboutPage() {
                 <p className="text-[16px] leading-relaxed text-ink/80 italic mt-4">
                   "We are not building for quarterly targets. We are building for the next generation that will live in these homes, sell them, and tell their friends who built them. Reputation is the only asset that compounds. Everything else depreciates."
                 </p>
-                <p className="mt-6 font-bold text-[15px]">CMD, Ghar Banwao</p>
-                <p className="text-[13px] text-ink/60">Chief Managing Director</p>
+                <p className="mt-6 font-bold text-[15px]">Sujata Nishad</p>
+                <p className="text-[13px] text-ink/60">Chief Managing Director, Ghar Banwao</p>
               </div>
             </Reveal>
           </Container>
