@@ -7,7 +7,7 @@ import { TESTIMONIALS, VIDEOS } from "@/data/content";
 const HOME_VIDEOS = VIDEOS.slice(0, 6);
 
 const TCard = ({ t }) => (
-  <article className="w-[300px] md:w-[380px] shrink-0 mx-2.5 card-gb p-6 flex flex-col bg-paper" data-testid="testimonial-card">
+  <article className="w-[300px] md:w-[380px] shrink-0 mx-2.5 card-gb p-6 flex flex-col bg-paper h-full" data-testid="testimonial-card">
     <div className="flex items-center gap-3">
       <div className="h-16 w-16 rounded-full bg-[#E9E9E6] grid place-items-center font-mono text-[9px] shrink-0">{t.portrait}</div>
       <div>
@@ -16,8 +16,8 @@ const TCard = ({ t }) => (
       </div>
     </div>
     <p className="mt-4 text-[13px] flex items-center gap-2"><Stars n={t.rating} /> <span className="text-ink/60">{t.source} · {t.date}</span></p>
-    <p className="mt-4 text-[15px] leading-relaxed flex-1">"{t.quote}"</p>
-    <div className="mt-5 pt-4 border-t border-divider flex items-center gap-3">
+    <p className="mt-4 text-[15px] leading-relaxed line-clamp-5">&ldquo;{t.quote}&rdquo;</p>
+    <div className="mt-auto pt-4 border-t border-divider flex items-center gap-3">
       <div className="h-10 w-10 rounded-lg bg-[#E9E9E6] grid place-items-center font-mono text-[8px] shrink-0">{t.thumb}</div>
       <div className="text-[13px] leading-tight">
         <p className="font-mono font-medium">{t.project_id}</p>
