@@ -1,19 +1,33 @@
 import { useState } from "react";
-import { ArrowLeft, Play } from "lucide-react";
+import { ArrowLeft, Play, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Container, Reveal, SectionHeader, Stars } from "@/components/site/shared";
+import { Navbar } from "@/components/site/Navbar";
+import { Footer } from "@/components/site/FaqCtaFooter";
 import { VIDEOS } from "@/data/content";
+import { TESTIMONIALS } from "@/data/content";
 
-const REVIEWS = VIDEOS;
+const VIDEO_REVIEWS = VIDEOS;
+
+const StarRow = ({ rating }) => (
+  <span className="inline-flex gap-0.5">
+    {[1, 2, 3, 4, 5].map((n) => (
+      <Star key={n} className={`h-3.5 w-3.5 ${n <= rating ? "fill-yellow text-yellow" : "fill-none text-gray-300"}`} strokeWidth={1.5} />
+    ))}
+  </span>
+);
 
 export default function ReviewsPage() {
   const [open, setOpen] = useState(null);
 
   return (
     <div className="min-h-screen bg-paper text-ink" data-testid="reviews-page">
+      <Navbar />
+
       <main>
-        <section className="section-gb" data-testid="reviews-hero">
+        {/* Hero */}
+        <section className="section-gb pt-24 md:pt-28" data-testid="reviews-hero">
           <Container className="max-w-5xl">
             <Reveal>
               <Link to="/" className="inline-flex items-center gap-2 text-[14px] font-semibold text-ink/60 hover:text-ink transition-colors mb-8" data-testid="reviews-back">
@@ -34,10 +48,11 @@ export default function ReviewsPage() {
           </Container>
         </section>
 
-        <section className="section-gb bg-wash-yellow" data-testid="reviews-grid-section">
+        {/* Video Reviews */}
+        <section className="section-gb bg-wash-yellow" data-testid="reviews-video-section">
           <Container className="max-w-6xl">
             <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {REVIEWS.map((v, i) => (
+              {VIDEO_REVIEWS.map((v, i) => (
                 <Reveal key={v.id} delay={i * 0.06}>
                   <button
                     onClick={() => setOpen(v)}
@@ -74,6 +89,50 @@ export default function ReviewsPage() {
           </Container>
         </section>
 
+        {/* Google Reviews Section */}
+        <section className="section-gb" data-testid="reviews-google-section">
+          <Container className="max-w-6xl">
+            <SectionHeader
+              label="GOOGLE REVIEWS · 4.9 / 5 AVERAGE"
+              title="What our customers say on Google"
+              supporting="Over 200+ verified reviews from homeowners across Lucknow and 8 UP cities."
+              align="center"
+            />
+            <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {TESTIMONIALS.map((r, i) => (
+                <Reveal key={r.project_id || i} delay={(i % 3) * 0.05}>
+                  <div className="card-gb p-5 md:p-6" data-testid={`google-review-${i + 1}`}>
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <p className="font-bold text-[15px]">{r.name}</p>
+                        <p className="text-[12px] text-ink/50 font-mono mt-0.5">{r.locality} &middot; {r.date}</p>
+                      </div>
+                      <span className="shrink-0 bg-green/10 text-green-700 text-[11px] font-mono font-bold px-2 py-0.5 rounded-full">{r.rating}.0</span>
+                    </div>
+                    <div className="mt-2.5">
+                      <StarRow rating={r.rating} />
+                    </div>
+                    <p className="mt-3 text-[14px] text-ink/75 leading-relaxed">&ldquo;{r.quote}&rdquo;</p>
+                    <p className="mt-2.5 text-[12px] font-mono text-ink/40">Project {r.project_id} &middot; {r.project_size}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="mt-12 text-center">
+              <a
+                href="https://www.google.com/maps"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 pill-green px-6 text-[14px]"
+                data-testid="reviews-google-link"
+              >
+                Read all reviews on Google →
+              </a>
+            </Reveal>
+          </Container>
+        </section>
+
+        {/* CTA */}
         <section className="section-gb" data-testid="reviews-cta-section">
           <Container className="max-w-3xl text-center">
             <Reveal>
@@ -105,6 +164,8 @@ export default function ReviewsPage() {
           </Container>
         </section>
       </main>
+
+      <Footer />
 
       <Dialog open={!!open} onOpenChange={(o) => !o && setOpen(null)} data-testid="review-lightbox">
         <DialogContent className="max-w-3xl rounded-2xl border-divider p-3" data-testid="review-dialog-content">
