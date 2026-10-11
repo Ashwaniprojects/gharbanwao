@@ -123,32 +123,33 @@ export const FinalCTA = () => {
 
 export const Footer = () => (
   <footer className="bg-paper border-t border-divider pb-24 md:pb-0" data-testid="footer">
-    <Container className="py-14 grid md:grid-cols-3 gap-10">
-      <div>
+    <Container className="py-14 grid md:grid-cols-4 gap-10">
+      <div className="md:col-span-1">
         <Logo size="h-20" />
-        <p className="mt-4 text-[15px] text-ink/70 max-w-[36ch]">Lucknow's residential & commercial construction company, building it right the first time.</p>
+        <p className="mt-4 text-[15px] text-ink/70">Lucknow's #1 construction company — 260+ homes delivered across Uttar Pradesh since 2017.</p>
         <address className="mt-5 not-italic text-[14px] text-ink/70 space-y-1">
           <p>16/284, near Munshipulia, next to Ashirwad Bakery, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
           <p><a href={`tel:${PHONES[0]}`} className="hover:text-ink">{PHONES[0]}</a> · <a href={`tel:${PHONES[1]}`} className="hover:text-ink">{PHONES[1]}</a></p>
           <p><a href={WHATSAPP_URL} className="hover:text-ink">WhatsApp</a> · <a href="mailto:hello@gharbanwao.com" className="hover:text-ink">hello@gharbanwao.com</a></p>
         </address>
       </div>
-      <div className="md:col-span-2">
+      <div>
         <p className="mono-label text-ink/50 mb-4">Explore</p>
-        <div className="grid grid-cols-2 gap-x-8">
-          <ul className="space-y-2 text-[15px] font-semibold">
-            {FOOTER_NAV.slice(0, 4).map((n) => (
-              <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
-            ))}
-            <li><Link to="/register" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-register">Register with us</Link></li>
-          </ul>
-          <ul className="space-y-2 text-[15px] font-semibold">
-            {FOOTER_NAV.slice(4).map((n) => (
-              <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
-            ))}
-            <li><Link to="/blog" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-blog">Blog</Link></li>
-          </ul>
-        </div>
+        <ul className="space-y-2 text-[15px] font-semibold">
+          {FOOTER_NAV.slice(0, 4).map((n) => (
+            <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
+          ))}
+          <li><Link to="/register" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-register">Register with us</Link></li>
+        </ul>
+      </div>
+      <div>
+        <p className="mono-label text-ink/50 mb-4">Explore</p>
+        <ul className="space-y-2 text-[15px] font-semibold">
+          {FOOTER_NAV.slice(4).map((n) => (
+            <li key={n.id}><button onClick={() => footerGo(n.id)} className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid={`footer-link-${n.id}`}>{n.label}</button></li>
+          ))}
+          <li><Link to="/blog" className="hover:underline decoration-green decoration-2 underline-offset-4" data-testid="footer-link-blog">Blog</Link></li>
+        </ul>
       </div>
       <div>
         <p className="mono-label text-ink/50 mb-4">Trust</p>
