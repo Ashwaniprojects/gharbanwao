@@ -2,9 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "dev",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["start"],
+      "name": "Dev Server",
+      "cwd": "E:\\Ghar Banwao & Naksha banwao\\developmentgharbanwao\\repo\\frontend",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "npm.cmd", "start"],
       "port": 3000
     }
   ]
