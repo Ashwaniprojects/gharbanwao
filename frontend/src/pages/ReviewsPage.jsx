@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, Play, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Play, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Container, Reveal, SectionHeader, Stars } from "@/components/site/shared";
@@ -132,10 +132,10 @@ export default function ReviewsPage() {
                 href="https://www.google.com/maps"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 pill-green px-8"
+                className="btn-animated"
                 data-testid="reviews-google-link"
               >
-                Read all reviews on Google →
+                Read all reviews on Google <ArrowRight className="arr-icon h-[18px] w-[18px]" strokeWidth={2.5} />
               </a>
             </Reveal>
           </Container>
@@ -157,17 +157,17 @@ export default function ReviewsPage() {
                 href="https://wa.aisensy.com/+919198059992"
                 target="_blank"
                 rel="noreferrer"
-                className="pill-green px-8"
+                className="pill-yellow px-8"
                 data-testid="reviews-whatsapp-cta"
               >
                 Chat on WhatsApp
               </a>
               <a
                 href="tel:09648249999"
-                className="pill-green"
+                className="btn-animated"
                 data-testid="reviews-call-cta"
               >
-                Call 09648249999
+                Call 09648249999 <ArrowRight className="arr-icon h-[18px] w-[18px]" strokeWidth={2.5} />
               </a>
             </Reveal>
           </Container>

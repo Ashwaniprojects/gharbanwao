@@ -2,7 +2,7 @@ import { AnnouncementStrip } from "@/components/site/AnnouncementStrip";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer, MobileBar } from "@/components/site/FaqCtaFooter";
 import { Container, Reveal, SectionHeader } from "@/components/site/shared";
-import { Phone, MessageCircle, MapPin, Mail, Clock } from "lucide-react";
+import { ArrowRight, Phone, MessageCircle, MapPin, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   return (
@@ -85,11 +85,11 @@ export default function ContactPage() {
               />
             </Reveal>
             <Reveal className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a href="https://wa.aisensy.com/+919198059992" target="_blank" rel="noreferrer" className="pill-green px-8" data-testid="contact-whatsapp-btn">
+              <a href="https://wa.aisensy.com/+919198059992" target="_blank" rel="noreferrer" className="pill-yellow px-8" data-testid="contact-whatsapp-btn">
                 Chat on WhatsApp
               </a>
-              <a href="tel:09648249999" className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-divider bg-paper text-[15px] font-bold hover:border-ink/40 transition-colors" data-testid="contact-call-btn">
-                Call 09648249999
+              <a href="tel:09648249999" className="btn-animated" data-testid="contact-call-btn">
+                Call 09648249999 <ArrowRight className="arr-icon h-[18px] w-[18px]" strokeWidth={2.5} />
               </a>
             </Reveal>
           </Container>

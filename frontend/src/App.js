@@ -13,6 +13,7 @@ import RegisterPage from "@/pages/RegisterPage";
 import ReviewsPage from "@/pages/ReviewsPage";
 import { CalcProvider } from "@/lib/calcContext";
 import { useLenis } from "@/hooks/useLenis";
+import { BuilderMascot } from "@/components/site/BuilderMascot";
 
 function App() {
   useLenis();
@@ -35,6 +36,7 @@ function App() {
         </BrowserRouter>
       </HelmetProvider>
       <Toaster position="top-center" richColors />
+      <BuilderMascot size={80} />
     </CalcProvider>
   );
 }

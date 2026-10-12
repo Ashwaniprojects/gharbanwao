@@ -22,7 +22,7 @@ export const Pricing = () => (
                 </div>
               ))}
             </dl>
-            <button onClick={() => scrollToId("contact")} className={`mt-8 h-12 ${p.featured ? "pill-green" : "pill-ghost"}`} data-testid={`pricing-cta-${p.name.toLowerCase()}`}>{p.cta} <ArrowRight className="h-4 w-4" /></button>
+            <button onClick={() => scrollToId("contact")} className={`btn-animated mt-8 ${p.featured ? "" : "btn-animated--yellow"}`} data-testid={`pricing-cta-${p.name.toLowerCase()}`}>{p.cta} <ArrowRight className="arr-icon h-[18px] w-[18px]" strokeWidth={2.5} /></button>
           </Reveal>
         ))}
       </div>
